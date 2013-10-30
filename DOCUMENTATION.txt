@@ -1,0 +1,43 @@
+Documentation
+-------------
+
+La documentation Thelia pour les utilisateurs, les intégrateurs et les
+développeurs est disponible en ligne uniquement, à l'adresse suivante:
+
+   http://thelia.net/wiki
+
+Vous pouvez vous aussi participer à l'amélioration et l'enrichissement de cette
+documentation si vous le soihiatez !
+
+Actualités
+----------
+
+Le blog Thelia vous permet de suivre l'évoluition et l'actualité de Thelia:
+
+   http://thelia.net/blog
+
+Support
+-------
+
+Thelia bénéficie d'une commuauité d'utilisateurs, d'intégrateurs et de développeurs
+actifs, qui saura vous aider à résoudre les diffciultés que vous pourrez rencontrer.
+Pour celà, rendez vous sur le forum Thelia:
+
+   http://thelia.net/forum
+
+Plugins
+-------
+
+Vous pouvez étendre les fonctionnalités de Thelia avec des modules complémentaires,
+ou plugins, réalisés et mis à votre disposition par la communauté. Ils sont disponibles
+dans l'espace de contribution Thelia:
+
+   http://thelia.net/Plugins.html
+
+Les plugins suivants sont fournis avec une nouvelle installation de THELIA :
+
+   cheque .....: prise en charge des paiement par chèque
+   colissimo ..: prise en charge de la livraison par Colissimo
+   tinymceplus : fournit un editeur visuel pour les descriptions de vos produits,
+                 rubriques, contenus et dossiers.
+

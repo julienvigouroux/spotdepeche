@@ -1,0 +1,18 @@
+THELIA
+==========================================
+
+Développement :
+
+Manuel Raynaud : mraynaud@openstudio.fr
+Etienne Roudeix : eroudeix@openstudio.fr
+Franck Allimant : franck@cqfdev.fr
+Yoan De Macedo : yoandm@gmail.com
+Arnault Pachot : apachot@openstudio.fr
+Jean-David Olekhnovitch : jd@olek.fr
+Hubert Blein : hubert@pixelsmill.com
+
+Tests, ergonomie :
+
+Cédric Sibaud : csibaud@openstudio.fr
+Stéphanie Pinet : spinet@openstudio.fr
+Stéphane Calisti : scalisti@openstudio.fr

@@ -1,0 +1,269 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+#INCLURE "template/meta.html"
+#INCLURE "template/tag_stats.html"
+<script type="text/javascript">
+$(function()
+{
+	$('.js_caracdisp').click(function()
+	{
+		/*jquery lit systèmatiquement l'attribut checked comme checked. On utilise le statut readonly pour savoir si l'utilisateur reclique sur la même radio (on ne veut pas perdre les checlboxes cochées dans ce cas)*/
+		if($(this).attr('readonly') != 'readonly')
+		{
+			$('.js_caracdisp').attr('readonly', false);
+			$(this).attr('readonly', 'readonly');
+		}
+		else
+		{
+			$(this).attr('checked', false);
+			$(this).attr('readonly', false);
+		}
+	});
+
+	$('.js_rubrique').click(function()
+	{
+		/*jquery lit systèmatiquement l'attribut checked comme checked. On utilise le statut readonly pour savoir si l'utilisateur reclique sur la même radio (on ne veut pas perdre les checlboxes cochées dans ce cas)*/
+		if($(this).attr('readonly') != 'readonly')
+		{
+			$('.js_rubrique').attr('readonly', false);
+			$(this).attr('readonly', 'readonly');
+			$('.js_sousRubrique').attr('disabled', 'disabled');
+			$('.js_sousRubrique').attr('checked', false);
+			$('.js_Parent_' + $(this).attr('id')).attr('disabled', false);
+		}
+	});
+
+	$('#submitRechercheAvancee').click(function()
+	{
+		var messageErreur = new Array();
+
+		/*A-t-on choisi une rubrique ?*/
+		var rubriqueCochee = 0;
+		$('.js_rubrique').each(function()
+		{
+			if(($(this).attr('checked')) == 'checked')		rubriqueCochee = $(this).attr('id').substr(3, $(this).attr('id').length);
+		});
+		if(!rubriqueCochee)		messageErreur.push("::moteuravance_erreur_rubrique::");
+
+		/*A-t-on choisi au moins une sous rubrique*/
+		var sousRubriqueCochee = new Array();
+		$('.js_sousRubrique').each(function()
+		{
+			if(($(this).attr('checked')) == 'checked')		sousRubriqueCochee.push($(this).attr('id').substr(7, $(this).attr('id').length));
+		});
+		if(sousRubriqueCochee.length==0)		messageErreur.push("::moteuravance_erreur_sousrubrique::");
+
+		/*A-t-on choisi au moins une caracdisp*/
+		var caracteristiqueCochee = new Array();
+		var caracdispCochee = new Array();
+		$('.js_caracdisp').each(function()
+		{
+			if(($(this).attr('checked')) == 'checked')
+			{
+				caracteristiqueCochee.push($(this).attr('name').substr(15, $(this).attr('name').length));
+				caracdispCochee.push($(this).attr('id').substr(9, $(this).attr('id').length));
+			}
+		});
+		/*Blocage à activer si tous les produits ont les même caractéristiques*/
+		/*if(caracteristiqueCochee.length==0 || caracdispCochee.length==0)		messageErreur.push("Veuillez sélectionner au moins une caracteristique.");*/
+
+		if(messageErreur.length > 0)
+		{
+			$('#affichage-erreur').html(messageErreur.join("<br />"));
+			$('#bloc-erreur').show();
+			return false;
+		}
+
+		var requete = '&rubrique=' + rubriqueCochee + '&sousrubrique=' + sousRubriqueCochee.join(',') + '&caracteristique=' + caracteristiqueCochee.join('-') + '&caracdisp=' + caracdispCochee.join('-');
+
+		window.location = '#URLFOND(recherche_avancee)' + requete;
+
+		return false;
+	});
+
+        $('#reinitialise').click(function()
+	{
+            $('.js_rubrique').attr('checked', false);
+            $('.js_rubrique').attr('readonly', false);
+            $('.js_sousRubrique').attr('checked', false);
+            $('.js_sousRubrique').attr('disabled', 'disabled');
+            $('.js_sousRubrique').attr('readonly', false);
+            return false;
+        });
+});
+</script>
+</head>
+<body>
+<div id="principale">
+	<div id="interface">
+#INCLURE "template/entete.html"
+#INCLURE "template/menu.html"
+		<div id="chemin" class="grid_12">
+        	<a href="#URLSOMMAIRE">::accueil::</a> / ::rechercheavancee::
+		</div>
+		<div id="contenu" class="grid_12">
+
+			<h2>::rechercheavancee::</h2>
+
+			<div class="grid_12 erreur" id="bloc-erreur" style="display:none">
+				<div class="padding-wrap" id="affichage-erreur">
+				Erreur :
+				</div>
+			</div>
+
+			<form class="grid_12" id="formRechercheAvancee" method="POST" action="#URLFOND(recherche_avancee)">
+
+				<div class="grid_8">
+
+					<h3>::rubriquessousrub::</h3>
+
+					<THELIA_rub type="RUBRIQUE" classement="manuel" parent="0">
+
+						<div class="grid_6">
+						<ul class="ul-debut">
+                                                    <TEST_sousrub variable="#GET{sousrub#ID}" test="vide">
+
+							<li>
+							<TEST_rubriqueCoche variable="#ID" test="dansliste" valeur="#ENV{rubrique}">
+								<input type="radio" name="rubrique" class="js_rubrique" id="rub#ID" value="#TITRE" checked="checked" />
+                                                        </TEST_rubriqueCoche>
+		     					<input type="radio" name="rubrique" class="js_rubrique" id="rub#ID" value="#TITRE" />
+			  				<//TEST_rubriqueCoche>
+
+							<label for="rub#ID"><span class="h4">#TITRE</span></label>
+
+							<ul class="ul-imbrique">
+							<THELIA_sousrub type="RUBRIQUE" parent="#ID">
+
+								#SET{sousrub#ID, #PARENT}
+
+
+								<li>
+								<TEST_rubriqueCoche variable="#PARENT" test="dansliste" valeur="#ENV{rubrique}">
+									<TEST_sousrubriqueCoche variable="#ID" test="dansliste" valeur="#ENV{sousrubrique}">
+										<input type="checkbox" name="sousrub#ID" class="js_sousRubrique js_Parent_rub#PARENT" id="sousrub#ID" value="#TITRE" checked="checked" />
+									</TEST_sousrubriqueCoche>
+		     								<input type="checkbox" name="sousrub#ID" class="js_sousRubrique js_Parent_rub#PARENT" id="sousrub#ID" value="#TITRE" />
+		     							<//TEST_sousrubriqueCoche>
+		     						</TEST_rubriqueCoche>
+		     							<input type="checkbox" name="sousrub#ID" class="js_sousRubrique js_Parent_rub#PARENT" id="sousrub#ID" value="#TITRE" disabled="disabled" />
+		     						<//TEST_rubriqueCoche>
+									<label for="sousrub#ID">#TITRE</label>
+								</li>
+
+							</THELIA_sousrub>
+
+							</ul>
+							</li>
+
+                                                    </TEST_sousrub>
+                                                    <//TEST_sousrub>
+
+						</ul>
+						</div>
+					</THELIA_rub>
+
+				</div>
+
+				<div class="grid_4">
+
+					<h3>::carac::</h3>
+
+					<THELIA_carac type="caracteristique" affiche="1">
+
+						<ul class="ul-debut">
+
+					        <li>
+							<span class="h4">#TITRE</span>
+							<ul class="ul-imbrique">
+					        <THELIA_caracdisp type="CARACDISP" caracteristique="#ID">
+
+						        <li>
+						        	<TEST_caracdispCoche variable="#ID" test="dansliste" valeur="#ENV{caracdisp}" separateur="-">
+										<input type="radio" name="caracteristique#CARACTERISTIQUE" class="js_caracdisp js_caracteristique_#CARACTERISTIQUE" id="caracdisp#ID" value="#TITRE" checked="checked" readonly="readonly" />
+				     				</TEST_caracdispCoche>
+				     					<input type="radio" name="caracteristique#CARACTERISTIQUE" class="js_caracdisp js_caracteristique_#CARACTERISTIQUE" id="caracdisp#ID" value="#TITRE" />
+					  				<//TEST_caracdispCoche>
+
+							        <label for="caracteristique#CARACTERISTIQUE">#TITRE</label>
+						        </li>
+
+					        </THELIA_caracdisp>
+							</ul>
+					        </li>
+
+						</ul>
+					</THELIA_carac>
+
+				</div>
+				<div class="grid_12 ralign">
+                                    <input type="submit" name="reinitialise" id="reinitialise" value="::raz_multicritere::" style="margin-right:10px" />
+                                    <input type="submit" name="submitRechercheAvancee" id="submitRechercheAvancee" value="::rechercher::" />
+				</div>
+
+			</form>
+
+		<TEST_recherche variable="#ENV{rubrique}" test="nonvide">
+			<T_PROD>
+			<THELIA_PROD type="PRODUIT" classement="inverse" rubrique="#ENV{sousrubrique}" caracteristique="#ENV{caracteristique}" caracdisp="#ENV{caracdisp}" num="12">
+				<div class="produit grid_3" >
+					<div class="produit-wrap">
+						<a href="#URL" class="image">
+						<T_IMAGE>
+							<THELIA_IMAGE type="IMAGE" num="1" produit="#ID" hauteur="140">
+								<img src="#IMAGE" alt="#PRODTITRE" title="#PRODTITRE"/>
+							</THELIA_IMAGE>
+						</T_IMAGE>
+								<img src="./template/_gfx/no-image.png" alt="Pas d'image disponible" />
+						<//T_IMAGE>
+						</a>
+						<div class="description grid_12">
+							<h3><a href="#URL">#TITRE</a></h3>
+							<div class="chapo">#CHAPO</div>
+							#NOUVEAU[<span class="nouveau">::nouveau::</span>][]
+						</div>
+						<div class="prix grid_12">
+							<div class="grid_6 wrap-prix">#PROMO[<span class="prixProduit">#PRIX2€</span>][<span class="prixProduit">#PRIX€</span>]</div>
+							<div class="grid_6 wrap-prix-promo">#PROMO[<del>#PRIX€</del>][]</div>
+						</div>
+						<div class="infossup grid_12 ralign"><a class="acheter" href="#URL">::infosup:: <span class="hidden">sur #TITRE</span></a></div>
+					</div>
+				</div>
+				#FILTRE_modulo(#COMPT||2||<div class="separation"></div>)
+				</THELIA_PROD>
+
+            <div id="pages" class="grid_12">
+                <THELIA_PAGEPREC type="PAGE" rubrique="#ENV{sousrubrique}" num="12" typeaff="0" avance="precedente">
+                	<div class="pagination"><a href="#URLFOND(recherche_avancee,page=#PAGE_PREC&amp;rubrique=#ENV{rubrique}&amp;sousrubrique=#ENV{sousrubrique}&amp;caracteristique=#ENV{caracteristique}&amp;caracdisp=#ENV{caracdisp})" class="LIEN_pages"><</a></div>
+                </THELIA_PAGEPREC>
+                <THELIA_CPAGE type="PAGE" rubrique="#ENV{sousrubrique}"  num="12" max="10" typeaff="1">
+	                <THELIA_PAGECONT_PASCOUR type="PAGE" rubrique="#ENV{sousrubrique}"  num="12" courante="0" pagecourante="#PAGE_NUM" max="10" typeaff="1">
+	                	<div class="pagination"><a href="#URLFOND(recherche_avancee,page=#PAGE_NUM&amp;rubrique=#ENV{rubrique}&amp;sousrubrique=#ENV{sousrubrique}&amp;sousrubrique=#ENV{sousrubrique}&amp;caracteristique=#ENV{caracteristique}&amp;caracdisp=#ENV{caracdisp})" class="LIEN_pages">#PAGE_NUM</a></div>
+	                </THELIA_PAGECONT_PASCOUR>
+	                <THELIA_PAGECONT_COUR type="PAGE" rubrique="#ENV{sousrubrique}" num="12" courante="1" pagecourante="#PAGE_NUM" max="10" typeaff="1">
+	                	<div class="paginationCourant"><a href="#URLFOND(recherche_avancee,page=#PAGE_NUM&amp;rubrique=#ENV{rubrique}&amp;sousrubrique=#ENV{sousrubrique}&amp;sousrubrique=#ENV{sousrubrique}&amp;caracteristique=#ENV{caracteristique}&amp;caracdisp=#ENV{caracdisp})" class="LIEN_pages">#PAGE_NUM</a></div>
+	                </THELIA_PAGECONT_COUR>
+                </THELIA_CPAGE>
+                <THELIA_PAGE_SUIVANTE type="PAGE" rubrique="#ENV{sousrubrique}" num="12" max="10" typeaff="0" avance="suivante">
+                	<div class="pagination"><a href="#URLFOND(recherche_avancee,page=#PAGE_SUIV&amp;rubrique=#ENV{rubrique}&amp;sousrubrique=#ENV{sousrubrique}&amp;caracteristique=#ENV{caracteristique}&amp;caracdisp=#ENV{caracdisp})" class="LIEN_pages">></a></div>
+                </THELIA_PAGE_SUIVANTE>
+            </div>
+            </T_PROD>
+            <p>::aucunresultat::</p>
+            <div class="push"></div>
+            <//T_PROD>
+        </TEST_recherche>
+        <//TEST_recherche>
+
+		</div>
+	</div>
+</div>
+#INCLURE "template/pied.html"
+#INCLURE "template/signature.html"
+</body>
+</html>

@@ -1,0 +1,94 @@
+#PARAM_FOND_nopageret=1
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+#INCLURE "template/meta.html"
+#INCLURE "template/tag_stats.html"
+</head>
+<body>
+<div id="principale">
+	<div id="interface">
+#INCLURE "template/entete.html"
+#INCLURE "template/menu.html"
+		<div id="chemin" class="grid_12"><a href="#URLSOMMAIRE">::accueil::</a> / ::identif::  : ::errsaisie::</div>
+        <div id="contenu" class="grid_12">
+            <h2>::identif:: : ::errsaisie::</h2>
+            <h4>::relisez::</h4>
+            <form action="#URLNOUVEAU" method="post" name="nouveau" id="nouveau" class="formcol1">
+            <input type="hidden" name="action" value="creercompte" />
+			<input type="hidden" name="obligetel" value="3" />
+            <p class="textConnexion">
+            <label for="civilite"> ::civilite:: #RAISONID[<span class="obligatoire">::obligatoire::</span>]</label> 
+            <select name="raison" size="1" id="civilite">
+            <option value="" selected="selected">::choisissez::</option>
+			<THELIA_raison type="RAISON">
+            <option value="#ID" #SELECTED>#LONG</option>
+			</THELIA_raison>
+            </select>
+            </p>
+            <p class="textConnexion">
+            <label for="nom"> ::nom:: #NOM[<span class="obligatoire">::obligatoire::</span>]</label> 
+            <input type="text" name="nom" id="nom" value="#NOM" />
+            </p>
+            <p class="textConnexion">
+            <label for="prenom"> ::prenom:: #PRENOM[<span class="obligatoire">::obligatoire::</span>]</label> 
+            <input type="text" name="prenom" id="prenom" value="#PRENOM" />
+            </p>
+            <p class="textConnexion">
+            <label for="adresse1"> ::adresse:: #ADRESSE1[<span class="obligatoire">::obligatoire::</span>]</label> 
+            <input type="text" name="adresse1" id="adresse1" value="#ADRESSE1"  />
+            </p>
+            <p class="textConnexion">
+            <label for="adresse2"> ::complementadresse::</label> 
+            <input type="text" name="adresse2" id="adresse2" value="#ADRESSE2"  />
+            </p>
+            <p class="textConnexion">
+            <label for="cpostal"> ::cp:: #CPOSTAL[<span class="obligatoire">::obligatoire::</span>]</label> 
+            <input type="text" name="cpostal" id="cpostal" value="#CPOSTAL"  />
+            </p>
+            <p class="textConnexion">
+            <label for="ville"> ::ville:: #VILLE[<span class="obligatoire">::obligatoire::</span>] </label> 
+            <input type="text" name="ville" id="ville" value="#VILLE"  />
+            </p>
+            <p class="textConnexion">
+            <label for="pays"> ::pays:: #PAYS[<span class="obligatoire">::obligatoire::</span>]</label> 
+            <select name="pays" size="1" id="pays">
+            <option value="" selected="selected">::choisissez::</option>
+            <THELIA_pays type="PAYS" zdefinie="1">             
+            <option value="#ID"  #SELECTED>#TITRE</option>
+            </THELIA_pays>
+            </select>
+            </p>
+            <p class="textConnexion">
+            <label for="telfixe"> ::tel:: #TELFIXE[<span class="obligatoire">::obligatoire::</span>]</label> 
+            <input type="text" name="telfixe" id="telfixe" value="#TELFIXE"  />
+            </p>
+            <p class="textConnexion">
+            <label for="email1"> E-mail#EMAIL[<span class="obligatoire">::verifemail::</span>]#EXISTE[<span class="obligatoire">(::compteexistant::)</span>]</label> 
+            <input type="text" value="#EMAIL" id="email1" name="email1"  />
+            </p>
+            <p class="textConnexion">
+            <label for="email2"> ::confirmationemail::</label> 
+            <input type="text"  value="#EMAIL" id="email2" name="email2"  />
+            </p>
+            <p class="textConnexion">
+            <label for="motdepasse1"> ::mdp1:: #MOTDEPASSE[<span class="obligatoire">::mdp4::</span>] </label> 
+            <input  name="motdepasse1" id="motdepasse1" type="password"  />
+            </p>
+            <p class="textConnexion">
+            <label for="motdepasse2"> ::confirmationmdp::</label> 
+            <input name="motdepasse2" id="motdepasse2" type="password"  />
+            </p>
+            <p class="derniereLigne"><button type="submit" class="bouton"><span><span>::valider::</span></span></button></p>
+            </form>
+        </div>
+	</div>
+</div>
+#INCLURE "template/pied.html"
+#INCLURE "template/signature.html"
+</body>
+</html>

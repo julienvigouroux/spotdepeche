@@ -1,0 +1,108 @@
+#PARAM_FOND_securise=1 #PARAM_FOND_nopageret=1
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    
+<head>
+#INCLURE "template/meta.html"
+#INCLURE "template/tag_stats.html"	
+</head>
+<body>
+<div id="principale">
+	<div id="interface">
+#INCLURE "template/entete.html"
+#INCLURE "template/menu.html"
+		<div id="chemin" class="grid_12"><a href="#URLSOMMAIRE">::accueil::</a> / ::comptemodifier::</div>
+
+		<div id="contenu" class="grid_12">
+			<h2>::comptemodifier::</h2>
+			<h3>::modifiermdp:: </h3>
+			<form action="#URLFOND(moncompte)" method="post" name="modifier1" id="modifier1" class="formcol1">
+			<input type="hidden" name="action" value="modifiercompte" />
+			<input type="hidden" name="obligetel" value="3" />
+            <p class="textConnexion">
+            <label for="motdepasse1">
+            ::monmdp:: #MOTDEPASSE[<span class="obligatoire">::verifmdp::</span>]
+            </label>
+            <input name="motdepasse1" type="password"/>
+            </p>
+            <p class="textConnexion">
+            <label for="motdepasse2">::confirmationmdp::</label>
+            <input  name="motdepasse2" type="password"/>
+            </p>
+            <p class="derniereLigne"><button type="submit" class="bouton"><span><span>::valider::</span></span></button></p>
+            </form>
+			<h3>::comptemodifier::</h3>
+            <form action="#URLFOND(compte_modifier)" method="post" name="modifier2" id="modifier2" class="formcol1">
+            <input type="hidden" name="action" value="modifiercompte" /> 
+            <p class="textConnexion">
+            <label for="civilite">
+            ::civilite:: #RAISONID[<span class="obligatoire">::obligatoire::</span>]
+            </label>
+            <select name="raison" size="1">
+            <option value="" selected="selected">::choisissez::</option>
+			<THELIA_raison type="RAISON">
+            <option value="#ID" #SELECTED>#LONG</option>
+			</THELIA_raison>
+            </select>				
+            </p>
+            <p class="textConnexion">
+            <label for="nom">::nom:: #NOM[<span class="obligatoire">::obligatoire::</span>]</label>
+            <input  type="text" name="nom"   value="#CLIENT_NOM"/>
+            </p>
+            <p class="textConnexion">
+            <label for="prenom">::prenom:: #PRENOM[<span class="obligatoire">::obligatoire::</span>]</label>
+            <input  type="text" name="prenom"   value="#CLIENT_PRENOM"/>
+            </p>
+            <p class="textConnexion">
+            <label for="adresse1">::adresse:: #ADRESSE1[<span class="obligatoire">::obligatoire::</span>]</label>
+            <input  type="text" name="adresse1"   value="#CLIENT_ADRESSE1"  />
+            </p>
+            <p class="textConnexion">
+            <label for="adresse2">::complementadresse:: </label>
+            <input  type="text" name="adresse2" value="#CLIENT_ADRESSE2" />
+            </p>
+            <p class="textConnexion">
+            <label for="cpostal">::cp:: #CPOSTAL[<span class="obligatoire">::obligatoire::</span>] </label>
+            <input  type="text" name="cpostal" value="#CLIENT_CPOSTAL" />
+            </p>
+            <p class="textConnexion">
+            <label for="ville">::ville:: #VILLE[<span class="obligatoire">::obligatoire::</span>]</label>
+            <input  type="text" name="ville" value="#CLIENT_VILLE" />
+            </p>
+            <p class="textConnexion">
+            <label for="pays">::pays:: #PAYS[<span class="obligatoire">::obligatoire::</span>]</label>
+            <select name="pays" size="1"  >
+            <option value="" selected="selected">::choisissez::</option>
+            <THELIA_pays type="PAYS" zdefinie="1">           
+            <option value="#ID"  #SELECTED>#TITRE</option>
+            </THELIA_pays>
+            </select>
+            </p>
+            <p class="textConnexion">
+            <label for="telfixe">::telfixe:: #TELFIXE[<span class="obligatoire">::obligatoire::</span>] </label>
+            <input  type="text" name="telfixe"   value="#CLIENT_TELFIXE" />
+            </p>
+            <p class="textConnexion">
+            <label for="telport">::telport:: </label>
+            <input  type="text" name="telport" value="#CLIENT_TELPORT" />
+            </p>
+            <p class="textConnexion">
+            <label for="email1">::email::#EMAIL[<span class="obligatoire">::verifemail::</span>]</label>
+            <input  type="text" name="email1" value="#CLIENT_EMAIL" />
+            </p>
+            <p class="textConnexion">
+            <label for="email2">::confirmationemail:: </label>
+            <input  type="text" name="email2"    value="#CLIENT_EMAIL" />
+            </p>
+            <p class="derniereLigne"><button type="submit" class="bouton"><span><span>::valider::</span></span></button></p>
+            </form>
+		</div>
+	</div>
+</div>
+#INCLURE "template/pied.html"
+#INCLURE "template/signature.html"
+</body>
+</html>

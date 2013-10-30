@@ -1,0 +1,103 @@
+		<div id="pre_footer_stripe">
+			<div id="pre_footer">
+				<div class="grid_12">
+					<div class="grid_4">
+						<img class="icone-large" src="./template/_gfx/icone-cadenas.png" alt="Paimement sécurisé avec #VARIABLE(nomsite)" /> <br /> <br />
+						::paiementsecurisepied::
+					</div>
+					<div class="grid_4">
+						<img class="icone-large" src="./template/_gfx/icone-commande.png" alt="Commande détaillée avec #VARIABLE(nomsite)"/> <br /> <br />
+						::commandedetaillee::
+					</div>
+					<div class="grid_4">
+						<img class="icone-large" src="./template/_gfx/icone-paiement.png" alt="Paiement multi-plateformes avec #VARIABLE(nomsite)"/> <br /> <br />
+						::paiementmulti::
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer_stripe">
+			<div id="footer">
+				<div class="grid_12">
+					<div id="footer_contenu" class="grid_3">
+					<h3>::dernieresactus::</h3>
+						<ul>
+						<THELIA_conts type="CONTENU" profondeur="0" parent="0" num="2">
+							<li><a href="#URL">> #TITRE</a></li>
+						</THELIA_conts>
+						</ul>
+					</div>
+					<div id="logopaiement" class="grid_3">
+					<h3>::moyenspaiement::</h3>
+						<ul>
+						<THELIA_paiements type="PAIEMENT">
+							<li class="inline-li"><img class="logo-paiement icone-large" src="#LOGO" alt="#NOM" /></li>
+						</THELIA_paiements>
+						</ul>
+					</div>
+
+					<div id="transport" class="grid_3">
+						<h3>::transport::</h3>
+							<THELIA_transports type="TRANSPORT" pays="64">
+								<img src="#LOGO" alt="#TITRE" class="icone-large" />
+							</THELIA_transports>
+					</div>
+
+					<div id="partage" class="grid_3">
+						<ul>
+							<li class="ilink">::infosboutique::</li>
+							<!-- Modifier le lien twitter. Par exemple https://twitter.com/nomutilisateur -->
+							<li><a href="https://twitter.com/theliaecommerce" class="twitter-follow-button" data-show-count="false">::suivre:: #VARIABLE(nomsite) Fwitter</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>
+							<!-- Changer le lien "http://www.facebook.com/theliaecommerce" vers le lien de votre page / profil -->
+							<li><a href="http://www.facebook.com/theliaecommerce" target="_blank"><img src="./template/_gfx/icone-facebook.png" alt="::suivre:: #VARIABLE(nomsite) Facebook" /></a></li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="sous_footer_stripe">
+			<div id="sous_footer">
+				<div class="grid_12">
+					<THELIA_rub type="RUBRIQUE" classement="manuel" ligne="1" parent="0">
+						<TEST_modulo5 variable="#COMPT" test="modulo" valeur="5">
+							<div class="grid_12"></div>
+						</TEST_modulo5>
+						<//TEST_modulo5>
+						<div class="grid_3">
+						<h3><a href="#URL#contenu">#TITRE</a></h3>
+						<T_menu_ssrubriques>
+
+							<ul class="sousnav">
+								<THELIA_menu_ssrubriques type="RUBRIQUE" classement="alpha" parent="#ID" ligne="1">
+								<li><a href="#URL#contenu"><b>- #TITRE</b></a> :
+									<T_produits_ssrubrique>
+										<ul>
+												<THELIA_produits_ssrubrique type="PRODUIT" rubrique="#ID" ligne="1" num="5">
+													<li><a href="#URL#contenu">#TITRE</a></li>
+												</THELIA_produits_ssrubrique>
+												<li class="full-li voirtous"><a href="#URL#contenu">> ::voirtous:: #TITRE</a></li>
+										</ul>
+									</T_produits_ssrubrique>
+									<//T_produits_ssrubrique>
+								</li>
+								</THELIA_menu_ssrubriques>
+							</ul>
+
+						</T_menu_ssrubriques>
+							<T_produits_rubrique>
+								<ul>
+									<THELIA_produits_rubrique type="PRODUIT" rubrique="#ID" ligne="1" num="5">
+										<li><a href="#URL#contenu">#TITRE</a></li>
+									</THELIA_produits_rubrique>
+									<li class="full-li"><a href="#URL#contenu">::voirtous:: #TITRE</a></li>
+								</ul>
+								</T_produits_rubrique>
+							<//T_produits_rubrique>
+						<//T_menu_ssrubriques>
+						</div>
+					</THELIA_rub>
+				</div>
+			</div>
+		</div>

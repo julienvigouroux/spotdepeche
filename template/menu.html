@@ -1,0 +1,54 @@
+<div id="nav" class="grid_12">
+    <div class="rfloat">
+	<THELIA_l type="LANGUE">
+            #FILTRE_different(#LANG||#ID||<a href="#URL">#DESCRIPTION</a>)       
+	</THELIA_l>
+        <a  href="#URLFOND(rss)" target="_blank" style="margin-left:50px"><img class="icone" src="./template/_gfx/icone-rss.png" alt="RSS #VARIABLE(nomsite)" /></a>
+    </div>
+		<ul class="primnav">
+            <THELIA_MENU_RUBRIQUES type="RUBRIQUE" classement="manuel" parent="0">
+	            <li>
+	            	<a href="#URL" #FILTRE_egalite(#RUBRIQUE_RACINE||#ID||class="selection")>#TITRE</a>
+	            	<T_menu_ssrubriques>
+	            		<div class="grid_12 grid_sousnav">
+		            		<div class="sousnav">
+			            		<div class="grid_12 sousnav_wrap">
+			            		#SET{idRubrique,#ID}
+			            		#SET{mod,3}
+								<T_image_rubrique>
+									<div class="grid_3 calign">
+										<THELIA_image type="IMAGE" rubrique="#GET{idRubrique}" num="1">
+											<img src="#IMAGE" class="miniature" alt="#TITRE">
+										</THELIA_image>
+									</div>
+								</T_image_rubrique>
+									#SET{mod,4}
+								<//T_image_rubrique>
+			    		        <THELIA_menu_ssrubriques type="RUBRIQUE" classement="manuel" parent="#ID">
+			    		        	<div class="grid_3">
+										<h3><a href="#URL">#TITRE</a></h3>
+										<T_produits_ssrubrique>
+											<ul class="ulsousnav">
+											<THELIA_produits_ssrubrique type="PRODUIT" rubrique="#ID" ligne="1" num="5">
+												<li><a href="#URL">#TITRE</a></li>
+											</THELIA_produits_ssrubrique>
+											</ul>
+											<a href="#URL" class="voirtous">::voirtous::</a>
+										</T_produits_ssrubrique>
+										<//T_produits_ssrubrique>
+									</div>
+			    		        	<TEST_modulo3 variable="#COMPT" test="modulo" valeur="#GET{mod}">
+			    		        		<div class="grid_9 sousnavsep"></div>
+			    		        	</TEST_modulo3>
+			    		        	<//TEST_modulo3>
+								</THELIA_menu_ssrubriques>
+								</div>
+							</div>
+	            		</div>
+	            	</T_menu_ssrubriques>
+	            	<//T_menu_ssrubriques>
+	            </li>
+            </THELIA_MENU_RUBRIQUES>
+        </ul>
+	<div class="push"></div>
+</div>

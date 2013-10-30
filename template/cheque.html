@@ -1,0 +1,47 @@
+#PARAM_FOND_securise=1 #PARAM_FOND_reset=1
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+#INCLURE "template/meta.html"
+#INCLURE "template/tag_stats.html"	
+</head>
+<body>
+<div id="principale">
+	<div id="interface">
+#INCLURE "template/entete.html"
+#INCLURE "template/menu.html"
+	<div id="chemin" class="grid_12"><a href="#URLSOMMAIRE">::accueil::</a> / ::choixmodereglementcheque::</div>
+		<div id="contenu" class="grid_12">
+			<div id="etapesDeCommande">
+				<ul>
+					<li><span>1</span>::panier::</li>
+					<li><span>2</span>::facturationlivraison::</li>
+					<li><span>3</span>::verifcommande::</li>
+					<li class="selection"><span class="chiffreSelection">4</span>::paiementsecurise::</li>
+				</ul>
+			</div>			
+			<h2>::choixmodereglementcheque:: </h2>
+			::remerciement::<br />
+			::emailrecapitulatif:: #CLIENT_EMAIL.<br />
+			::validationcommande::<br /><br />
+			::inforeglement::<br /><br />
+			<THELIA_cmd type="COMMANDE" ref="#COMMANDE_REF">	
+			<h3>::numcommande2:: : #REF</h3>
+			<h4>::date:: : #DATE</h4>
+			<h4>::total:: : #TOTCMDPORT €</h4>
+			</THELIA_cmd>
+            <div class="queFaire">
+				<a class="bouton" href="#URLSOMMAIRE"><span><span>::accueil::</span></span></a>
+			</div>            
+            
+		</div>
+	</div>
+</div>
+#INCLURE "template/pied.html"
+#INCLURE "template/signature.html"
+</body>
+</html>

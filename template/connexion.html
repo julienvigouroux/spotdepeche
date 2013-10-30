@@ -1,0 +1,117 @@
+#PARAM_FOND_nopageret=1
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+#INCLURE "template/meta.html"
+#INCLURE "template/tag_stats.html"	
+</head>
+<body>
+<div id="principale">
+	<div id="interface">
+#INCLURE "template/entete.html"
+#INCLURE "template/menu.html"
+		<div id="chemin" class="grid_12"><a href="#URLSOMMAIRE">::accueil::</a> / ::identif::</div>
+		<div id="contenu" class="grid_12">
+			<div class="grid_6">
+				<h2>::dejaclient::</h2>
+	            <form action="#URLFOND(connexion)" method="post" name="connexion" id="connexion">
+	            <input type="hidden" name="action" value="connexion" />
+	            #ERRCONNEX[<span class="obligatoire">::emailmdperr::</span> <div class="push"></div>]
+	            <p class="textConnexion">
+	            <label for="monemaild">::monemail::</label>
+	            <input name="email" type="text" id="monemaild" />
+	            </p>
+	            <p class="textConnexion">
+	            <label for="motdepasse"> ::monmdp:: </label>
+	            <input name="motdepasse" type="password" id="motdepasse"/>
+	            </p>
+	            <p class="textConnexion">
+                        <a href="#URLFOND(mdpoublie)">::mdpperduoublie::</a>
+                    </p>
+	            <p class="derniereLigne"><button type="submit" class="bouton">::valider::</button></p>
+	            </form>
+			</div>
+			<div class="grid_6">
+	            <h2>::nvclient::</h2>
+	            <form action="#URLNOUVEAU" method="post" name="nouveau" id="nouveau">
+	            <input type="hidden" name="action" value="creercompte" />
+				<input type="hidden" name="obligetel" value="3" />
+	            <p class="textConnexion">
+	            <label for="civilite">::civilite::*</label>
+	            <select name="raison" size="1" id="civilite">
+	            <option value="">::choisissez::</option>
+				<THELIA_raison type="RAISON">
+	            <option value="#ID" #DEFAUT>#LONG</option>
+				</THELIA_raison>
+	            </select>
+	            </p>
+	            <p class="textConnexion">
+	            <label for="nom">::nom::*</label>
+	            <input type="text" name="nom" id="nom"/>
+	            </p>
+	            <p class="textConnexion">
+	            <label for="prenom">::prenom::*</label>
+	            <input type="text" name="prenom" id="prenom"/>
+	            </p>
+	            <p class="textConnexion">
+	            <label for="adresse1">::adresse::*</label>
+	            <input type="text" name="adresse1" id="adresse1"/>
+	            </p>
+	            <p class="textConnexion">
+	            <label for="adresse2">::complementadresse::</label>
+	            <input type="text" name="adresse2" id="adresse2"/>
+	            </p>
+	            <p class="textConnexion">
+	            <label for="cpostal">::cp::*</label>
+	            <input type="text" name="cpostal" id="cpostal"/>
+	            </p>
+	            <p class="textConnexion">
+	            <label for="ville">::ville::*</label>
+	            <input type="text" name="ville" id="ville"/>
+	            </p>
+	            <p class="textConnexion">
+	            <label for="pays">::pays::*</label>
+	            <select name="pays" size="1" id="pays">
+	            <option value="">::choisissez::</option>
+	            <THELIA_pays type="PAYS" zdefinie="1">           
+	            <option value="#ID" #DEFAUT>#TITRE</option>
+	            </THELIA_pays>
+	            </select>
+	            </p>
+	            <p class="textConnexion">
+	            <label for="telfixe">::tel:: * </label>
+	            <input type="text" name="telfixe" id="telfixe"/>
+	            </p>
+	            <p class="textConnexion">
+	            <label for="email1">::email::*</label>
+	            <input type="text" name="email1" id="email1"/>
+	            </p>
+	            <p class="textConnexion">
+	            <label for="email2">::confirmationemail::*</label>
+	            <input type="text" name="email2" id="email2"/>
+	            </p>
+	            <p class="textConnexion">
+	            <label for="motdepasse1">::mdp1::* ::mincarac::</label>
+	            <input name="motdepasse1" type="password" id="motdepasse1"/>
+	            </p>
+	            <p class="textConnexion">
+	            <label for="motdepasse2">::confirmationmdp::*</label>
+	            <input name="motdepasse2" type="password" id="motdepasse2"/>
+	            </p>
+	            <p class="derniereLigne">
+                    <button type="submit" class="bouton"><span><span>::valider::</span></span></button>
+                    <span class="obligatoire">* ::champsobligat::</span>
+                    </p>
+	            </form>
+	        </div>
+		</div>
+	</div>
+</div>
+#INCLURE "template/pied.html"
+#INCLURE "template/signature.html"
+</body>
+</html>

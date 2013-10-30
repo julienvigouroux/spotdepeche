@@ -1,0 +1,75 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+#INCLURE "template/meta.html"
+#INCLURE "template/tag_stats.html"
+</head>
+<body>
+<div id="principale">
+	<div id="interface">
+#INCLURE "template/entete.html"
+#INCLURE "template/menu.html"
+		<div id="chemin">
+        	<a href="#URLSOMMAIRE">::accueil::</a> / ::recherche:: : #PRODUIT_MOTCLE
+		</div>
+		<div id="contenuPageRubrique" class="grid_12">
+			<h2>::votrerecherche:: : "#PRODUIT_MOTCLE"</h2>
+			<T_PROD>
+			<THELIA_PROD type="PRODUIT" motcle="#PRODUIT_MOTCLE" num="12">
+				<div class="produit grid_3" >
+					<div class="produit-wrap">
+						<a href="#URL" class="image">
+						<T_IMAGE>
+							<THELIA_IMAGE type="IMAGE" num="1" produit="#ID" hauteur="140">
+								<img src="#IMAGE" alt="#PRODTITRE" title="#PRODTITRE"/>
+							</THELIA_IMAGE>
+						</T_IMAGE>
+								<img src="./template/_gfx/no-image.png" alt="Pas d'image disponible" />
+						<//T_IMAGE>
+						</a>
+						<div class="description grid_12">
+							<h3><a href="#URL">#TITRE</a></h3>
+							<div class="chapo">#CHAPO</div>
+							#NOUVEAU[<span class="nouveau">::nouveau::</span>][]
+						</div>
+						<div class="prix grid_12">
+							<div class="grid_6 wrap-prix">#PROMO[<span class="prixProduit">#PRIX2€</span>][<span class="prixProduit">#PRIX€</span>]</div>
+							<div class="grid_6 wrap-prix-promo">#PROMO[<del>#PRIX€</del>][]</div>
+						</div>
+						<div class="infossup grid_12 ralign"><a class="acheter" href="#URL">::infosup:: <span class="hidden">sur #TITRE</span></a></div>
+					</div>
+				</div>
+				#FILTRE_modulo(#COMPT||2||<div class="separation"></div>)
+				</THELIA_PROD>
+
+            <div id="pages" class="grid_12">
+                <THELIA_PAGEPREC type="PAGE" num="12" typeaff="0" motcle="#PRODUIT_MOTCLE"  avance="precedente">
+                	<div class="pagination"><a href="#URLFOND(recherche,page=#PAGE_PREC&amp;motcle=#PRODUIT_MOTCLE)" class="LIEN_pages"><</a></div>
+                </THELIA_PAGEPREC>
+                <THELIA_CPAGE type="PAGE"  num="12" max="10" motcle="#PRODUIT_MOTCLE" typeaff="1">
+	                <THELIA_PAGECONT_PASCOUR type="PAGE"  num="12" courante="0" motcle="#PRODUIT_MOTCLE" pagecourante="#PAGE_NUM" max="10" typeaff="1">
+	                	<div class="pagination"><a href="#URLFOND(recherche,page=#PAGE_NUM&amp;motcle=#PRODUIT_MOTCLE)" class="LIEN_pages">#PAGE_NUM</a></div>
+	                </THELIA_PAGECONT_PASCOUR>
+	                <THELIA_PAGECONT_COUR type="PAGE" num="12" courante="1" motcle="#PRODUIT_MOTCLE" pagecourante="#PAGE_NUM" max="10" typeaff="1">
+	                	<div class="paginationCourant"><a href="#URLFOND(recherche,page=#PAGE_NUM&amp;motcle=#PRODUIT_MOTCLE)" class="LIEN_pages">#PAGE_NUM</a></div>
+	                </THELIA_PAGECONT_COUR>
+                </THELIA_CPAGE>
+                <THELIA_PAGE_SUIVANTE type="PAGE" num="12" max="10" motcle="#PRODUIT_MOTCLE" typeaff="0" avance="suivante">
+                	<div class="pagination"><a href="#URLFOND(recherche,page=#PAGE_SUIV&amp;motcle=#PRODUIT_MOTCLE)" class="LIEN_pages">></a></div>
+                </THELIA_PAGE_SUIVANTE>
+            </div>
+            </T_PROD>
+            <p>::aucunresultat::</p>
+            <div class="push"></div>
+            <//T_PROD>
+		</div>
+	</div>
+</div>
+#INCLURE "template/pied.html"
+#INCLURE "template/signature.html"
+</body>
+</html>

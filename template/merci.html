@@ -1,0 +1,31 @@
+#PARAM_FOND_reset=1
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+	#INCLURE "template/meta.html"
+</head>
+<body>
+<div id="principale">
+	<div id="interface">
+#INCLURE "template/entete.html"
+		
+#INCLURE "template/menu.html"
+		<div id="chemin" class="grid_12"><a href="#URLSOMMAIRE">::accueil::</a> / ::mdpperduoublie::</div>
+		<div id="contenu" class="grid_12">
+<h2>::merci::</h2>
+			<p>::remerciements::</p>
+          	<p>::abientot::</p>
+			<div class="queFaire">
+				<a class="bouton" href="#URLSOMMAIRE"><span><span><span>::retourpageaccueil::</span></span></span></a>
+			</div>
+		</div>
+	</div>
+</div>
+#INCLURE "template/pied.html"
+#INCLURE "template/signature.html"
+</body>
+</html>

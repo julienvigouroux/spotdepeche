@@ -1,0 +1,87 @@
+#PARAM_FOND_securise=1 #PARAM_FOND_nopageret=1
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+#INCLURE "template/meta.html"
+
+</head>
+<body>
+
+<div id="principale">
+	<div id="interface">
+#INCLURE "template/entete.html"
+#INCLURE "template/menu.html"
+		<div id="chemin">::navigation:: :<a href="#URLSOMMAIRE">::accueil::</a> / ::compte:: : ::modifadresselivraison::</div>
+		<div id="contenu" class="grid_12">
+			<h2>::compte:: : ::modifadresselivraison:: </h2>
+                        <form action="#URLFOND(livraison_modifier)" method="post" name="modifier" id="modifier" class="formcol1">
+			<input type="hidden" name="action" value="modifierlivraison" />
+			<THELIA_adr type="ADRESSE" adresse="#ADRESSE_ID" client="#CLIENT_ID">
+			<input name="id" type="hidden" value="#ID" />
+			<input name="adresse" type="hidden" value="#ID" />
+            <input type="hidden" name="urlok" value="#URLPAGERET" />
+            <input type="hidden" name="urlerr" value="#URLFOND(livraison_modifier_err,erradr=1&amp;adresse=#ID)" />
+           <p class="textConnexion">
+            <label for="libelle">::libelle:: #LIBELLE[<span class="obligatoire">::obligatoire::</span>] * </label>
+            <input name="libelle" type="text" value="#LIBELLE" />
+            </p>
+            <p class="textConnexion">
+            <label for="raison">::civilite::*</label>
+            <select name="raison" size="1">
+            <option value="">::choisissez::</option>
+			<THELIA_raison type="RAISON" select="#RAISONID">
+            <option value="#ID" #SELECTED>#LONG</option>
+			</THELIA_raison>
+            </select>
+            </p>
+            <p class="textConnexion">
+            <label for="nom">::nom:: #NOM[<span class="obligatoire">::obligatoire::</span>] *</label>
+            <input type="text" name="nom" value="#NOM" />
+            </p>
+            <p class="textConnexion">
+            <label for="prenom">::prenom:: #PRENOM[<span class="obligatoire">::obligatoire::</span>] *</label>
+            <input type="text" name="prenom" value="#PRENOM" />
+            </p>
+            <p class="textConnexion">
+            <label for="adresse1">::adresse:: #ADRESSE1[<span class="obligatoire">::obligatoire::</span>] *</label>
+            <input type="text" name="adresse1" value="#ADRESSE1" />
+            </p>
+            <p class="textConnexion">
+            <label for="adresse2">::complementadresse:: </label>
+            <input type="text" name="adresse2"  value="#ADRESSE2" />
+            </p>
+            <p class="textConnexion">
+            <label for="cpostal">::cp:: #CPOSTAL[<span class="obligatoire">::obligatoire::</span>] *</label>
+            <input type="text" name="cpostal"  value="#CPOSTAL" />
+            </p>
+            <p class="textConnexion">
+            <label for="ville">::ville:: #VILLE[<span class="obligatoire">::obligatoire::</span>] *</label>
+            <input type="text" name="ville"  value="#VILLE" />
+            </p>
+            <p class="textConnexion">
+            <label for="pays">::pays:: #PAYS[<span class="obligatoire">::obligatoire::</span>] *</label>
+            <select name="pays" size="1"   >
+            <option value="" selected="selected">::choisissez::</option>
+            <THELIA_pays type="PAYS" zdefinie="1" select="#PAYS">
+            <option value="#ID" #SELECTED>#TITRE</option>
+            </THELIA_pays>
+            </select>
+            </p>
+            <p class="textConnexion">
+            <label for="tel">::tel::</label>
+            <input type="text" name="tel" value="#TEL"/>
+            </p>
+            <p class="derniereLigne"><button type="submit" class="bouton"><span><span>::valider::</span></span></button></p>
+            </THELIA_adr>
+            </form>
+		</div>
+	</div>
+</div>
+#INCLURE "template/pied.html"
+#INCLURE "template/signature.html"
+</body>
+</html>

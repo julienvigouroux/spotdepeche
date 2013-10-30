@@ -1,0 +1,50 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+#INCLURE "template/meta_dossier.html"
+#INCLURE "template/tag_stats.html"	
+</head>
+<body>
+<div id="principale">
+	<div id="interface">
+#INCLURE "template/entete.html"
+#INCLURE "template/menu.html"
+		
+		<div id="chemin" class="grid_12">
+			<a href="#URLSOMMAIRE">::accueil::</a> / #FILTRE_egalite(#DOSSIER_NOM||||::dossiers::) #FILTRE_different(#DOSSIER_NOM||||#DOSSIER_NOM)
+		</div>
+		<div id="contenu" class="grid_12">
+		    <THELIA_DOSSIER type="DOSSIER"  id="#DOSSIER_ID">
+				<div class="contenu_dossier">
+					#FILTRE_egalite(#ENV{id_dossier, 0}||0||<h2>::derniersarticlesdos::</h2>)
+	                #FILTRE_different(#ENV{id_dossier, 0}||0||<h2>#TITRE</h2><div class="quote">#CHAPO</div>)
+	                <div class="push"></div>
+	                <THELIA_CONTENU type="CONTENU" classement="inverse" dossier="#ID">
+	                <div class="grid_12 nomargin">
+						#SET{urlContenu, #URL}
+	                		<T_IMAGE>
+		                		<THELIA_IMAGE type="IMAGE" num="1" contenu="#ID">
+		                			<div class="grid_3"><a href="#GET{urlContenu}"><img src="#IMAGE" alt="#CONTTITRE" title="#CONTTITRE" /></a></div>
+		                		</THELIA_IMAGE>
+	                		</T_IMAGE>
+								<div class="grid_3"><a href="#GET{urlContenu}"><img src="./template/_gfx/no-image.png" alt="Pas d'image disponible" /></a></div>
+							<//T_IMAGE>
+	                	<div class="grid_9"><h3>
+	                	<a href="#URL">#TITRE</a><span class="spanDate rfloat">#DATE</span></h3>
+	                	#CHAPO 
+	                	<div class="push"></div><a class="lire-la-suite" href="#URL"><b>::liresuite::</b> #TITRE</a></div>
+	                </div>		
+	                </THELIA_CONTENU>
+				</div>
+			</THELIA_DOSSIER>
+		</div>
+	</div>
+</div>
+#INCLURE "template/pied.html"
+#INCLURE "template/signature.html"
+</body>
+</html>

@@ -1,0 +1,28 @@
+Scopika <contact@scopika.com>
+Elodie Montel <montel.elodie@gmail.com>
+Matthieu Mallet <matthieu.mallet@gmail.com>
+Mathieu Rastoix <rastoix.m@hotmail.fr>
+David Aubel Raimbault <David.raimbault@ifrance.com>
+Abdellah TOUIL <abdellah31@yahoo.fr>
+Ludovic LENNE
+Spiralliance
+Frédéric Melon <fred@scopika.com>
+Christophe Martinez <christophe@arteminz.com>
+Mathieu Chabannat <chabannatm@gmail.com>
+Simon Arnal <arnal_simon@hotmail.com>
+Hubert Blein, Pixelsmill <contact@pixelsmill.com>
+Karim Belkacem <karim@ergonomind.com>
+Rodolphe - www.tuxy.fr
+Jean (Henri) Reber <ordinat.eure@free.fr>
+Jean-Baptiste BILLOT <ottoroots@gmail.com>
+Christophe Draperi <contact@informatiqueprog.net>
+Anthony çoubourou <chanthony@live.fr>
+Fabien Monsérat  <f.monserat@debussac.net>
+Claude Nougier <leon.rauguidec@laposte.net>
+Franck Allimant <franck.allimant@cqfdev.fr>
+Damien Foulhoux <damien.foulhoux@gmail.com>
+
+Un grand merci à tous les contributeurs de contrib.thelia.net
+
+Merci à OSEO pour son soutien financier lors de certaines périodes de R&D.
+Projet co-financé par l'Union européenne Fonds européen de développement régional FEDER.

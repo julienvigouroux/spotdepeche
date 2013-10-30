@@ -1,0 +1,98 @@
+MISE À JOUR DE THELIA
+---------------------
+
+Thelia requiert un serveur web Apache 2, le langage PHP en version 5.3 minimum,
+et la base de données MySQL en version 5.
+
+Assurez vous que l'environnement sur lequel vous souhaitez installer Thelia
+possède ces caractéristiques de base, sinon inutile d'essayer d'installer, ça ne
+marchera pas.
+
+Assurez vous aussi que le Thelia que vous souhaitez mettre à jour est complet et
+fonctionne correctement, c'est à dire que vous pouvez y passer une commande
+avec succès. Une tentative de mise à jour sur une installation incomplète,
+bricolée, ou non- fonctionnelle ne pourra pas réussir.
+
+Avant la mise à jour
+--------------------
+
+Avant tout, procédez à une sauvegarde complète des fichiers de votre installation
+actuelle de Thelia.
+
+Procédez de même a une sauvegarde de votre base de données, en utilisant par
+exemple la fonction 'export' de phpMyAdmin.
+
+Procédure de mise à jour
+------------------------
+
+1) Si votre version actuelle est une version 1.4.x, veuillez renommer le fichier
+   index.php à la racine de votre site en index.php.sauve.
+
+   Si votre version actuelle est une version 1.5.x, inutile de procéder à cette
+   manipulation.
+
+2) Copiez l'intégralité des fichiers et répertoires présents dans la distribution,
+   sur votre installation actuelle, en écrasant les fichiers et répertoires actuels.
+
+   /!\ Assurez-vous de n'oublier aucun des fichiers de la distribution, tous
+       doivent être copiés pour que la mise à jour puisse réussir.
+
+
+   /!\ Utilisateurs de Mac OS X : Lors d'un replacement d'un répertoire, le finder
+       supprime d'abord celui-ci avant de copier le nouveau. Soyez donc prudent
+       avec votre fichier classes/Cnx.class.php lorsque vous écrasez le répertoire
+       classes.
+
+3) Renommez votre répertoire d'administration actuel (admin_xxxxxxx, ou
+   le nom que vous lui avez choisi) en admin_xxxxxxx.sauve, par exemple
+
+4) Renommez le répertoire 'admin' de la nouvelle installation, et donnez lui le
+   nom du répertoire d'administration actuel: admin_xxxxxxx.
+
+   Si par exemple votre répertoire d'admin actuel s'appelle admin_QZrT5S, vous
+   devez maintenant avoir le répertoires suivants:
+
+      admin_QZrT5S.sauve (votre répertoire admin actuel)
+      admin_QZrT5S       (le répertoire admin de la nouvelle installation)
+
+5) Pour lancer la mise à jour, faites pointer votre navigateur vers le répertoire
+   d'installation:
+
+      http://adresse_de_votre_serveur/install/
+
+   Si vous avez installé Thelia  dans un sous-répertoire:
+
+      http://adresse_de_votre_serveur/nom_du_sous_repertoire/install/
+
+
+Une vidéo de démonstration de cette mise à jour est disponible ici:
+
+   http://vimeo.com/24613269
+
+
+Après la mise à jour
+--------------------
+
+Une fois la mise à jour réussie, vous pouvez supprimer les répertoires et fichiers
+suivants:
+
+   - client.orig
+   - template.orig
+   - l'ancien répertoire d'administration (admin_QZrT5S.sauve dans notre exemple)
+
+Pour des raisons de sécurité, il vous faut supprimer (ou renommer) le répertoire
+install.
+
+/!\ Si vous venez de mettre à jour une version 1.4.x, il vous faut:
+
+a) Remplacer le fichier index.php à la racine de votre site par la sauvegarde
+   que vous en avez fait à l'étape 1)
+
+b) Installer le plugin de compatibilité des templates 1.4, afin de pouvoir
+   utiliser votre template actuel. Ce plugin est disponible dans les contribs
+   Thelia:
+
+      http://thelia.net/contributions/plugins/administration/article/compatibilite-des-templates-1-4-x
+
+--
+Fin du document

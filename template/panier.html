@@ -1,0 +1,92 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+#INCLURE "template/meta.html"
+#INCLURE "template/tag_stats.html"
+</head>
+<body>
+<div id="principale">
+	<div id="interface">
+#INCLURE "template/entete.html"
+#INCLURE "template/menu.html"
+		<div id="chemin" class="grid_12"><a href="#URLSOMMAIRE">::accueil::</a> / ::contenu::</div>
+		<div id="contenu" class="grid_12">
+			<div id="etapesDeCommande">
+				<ul>
+					<li class="selection"><span class="chiffreSelection">1</span>::panier::</li>
+					<li><span>2</span>::facturationlivraison::</li>
+					<li><span>3</span>::verifcommande::</li>
+					<li><span>4</span>::paiementsecurise::</li>
+				</ul>
+			</div>				
+			<h2>::contenu::</h2>
+			<T_CONTENU_PANIER>
+			<table id="table-panier">
+				<thead>
+                <tr>
+					<th colspan="2">::contenu::</th>
+					<th>Déclinaisons</th>
+					<th>::prixunitaire::</th>
+					<th>::quantite::</th>
+					<th>::total:: TTC</th>
+					<th>::vider::</th>
+                </tr>
+				</thead>
+				<tbody>
+				<THELIA_CONTENU_PANIER type="PANIER">
+				<tr>
+					<td class="ligne">
+					<T_IMAGE>
+	                   	<THELIA_IMAGE type="IMAGE" num="1" produit="#ID" largeur="50">
+							<img src="#IMAGE" alt="#PRODTITRE " title="#PRODTITRE"/>
+						</THELIA_IMAGE>
+					</T_IMAGE>
+							<img src="./template/_gfx/no-image.png" width="50" alt="Pas d'image disponible" />
+					<//T_IMAGE>
+					</td>
+                    <td class="ligne"><a href="#PRODURL">#TITRE</a></td>
+                    <td class="ligne">#DECTEXTE</td>
+                    <td class="ligne">#PRIXU €</td>
+		    <td  class="ligne">
+            <form action="#URLPANIER" method="post" name="formpanier#ARTICLE" id="formpanier#ARTICLE">
+                      <input type="hidden" name="article" value="#ARTICLE" />
+                      <input type="hidden" name="action" value="modifier" />
+                      <select name="quantite" size="1" onchange="document.formpanier#ARTICLE.submit()">
+	                      <THELIA_quantite type="QUANTITE" article="#ARTICLE">
+	                      	<option value="#NUM" #SELECTED>#NUM</option>
+	                      </THELIA_quantite>
+                      </select>
+                </form>
+					</td>
+				  <td class="ligne">#TOTAL €</td>
+				  <td class="ligne" ><a href="#SUPPRURL"><small>::supprimer::</small></a></td>
+				</tr>
+                </THELIA_CONTENU_PANIER>
+                <tr>
+                	<th colspan="5">&nbsp;</th>
+					<th>::totalpanier:: :</th>
+					<th class="total">#PANIER_TOTAL €</th>
+				</tr>
+				</tbody>
+			</table>
+            <div class="queFaire">
+				<a href="#URLSOMMAIRE">::retourboutique::</a>
+				<a class="bouton" href="#URLFOND(adresse)">::finalisercommande::</a>
+			</div>
+			</T_CONTENU_PANIER>
+			<h4>::paniervide::</h4>
+            <div class="queFaire">
+				<a class="bouton" href="#URLSOMMAIRE"><span><span>::retourboutique::</span></span></a>
+			</div>		
+			<//T_CONTENU_PANIER>
+		</div>
+	</div>
+</div>
+#INCLURE "template/pied.html"
+#INCLURE "template/signature.html"
+</body>
+</html>

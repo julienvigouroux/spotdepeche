@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="b1a89d17-e725-43c2-91f1-2e8e938fefc5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/parseur/BoucleSimple.class.php" afterPath="$PROJECT_DIR$/classes/parseur/BoucleSimple.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fonctions/moteur.php" afterPath="$PROJECT_DIR$/fonctions/moteur.php" />
+    </list>
+    <ignored path="thelia.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/Dummy.txt" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374499106619" ignored="false" />
+    <file path="/1.5.4.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366625489265" ignored="false" />
+    <file path="/plugins.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366638484960" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../pluginsthelia/divers/portail_thelia.fr/squelettes/lang/local_fr.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366720655799" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../pluginsthelia/divers/portail_thelia.fr/squelettes/lang/local_en.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366720688377" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../pluginsthelia/divers/portail_thelia.fr/themes/TheliaPortail/habillage.css" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366721039601" ignored="false" />
+    <file path="/VERSION.txt" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366730590130" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../vm/vm-copark/puppet/manifests/default.pp" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366806501188" ignored="false" />
+    <file path="/ChangeLog.txt" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374490094046" ignored="false" />
+    <file path="/1.5.4.1.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366874877996" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_154/admin_new/classes/CategoryAdmin.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366983303828" ignored="false" />
+    <file path="/CategoryAdmin.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366980055931" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_154/admin_new/client.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366983303828" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_154/admin_new/classes/ClientAdmin.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366983303828" ignored="false" />
+    <file path="/ClientAdmin.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366980765785" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_154/admin_new/classes/ContentAdmin.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366983303828" ignored="false" />
+    <file path="/ContentAdmin.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366981431077" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_154/admin_new/classes/DeclinaisonAdmin.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366983303828" ignored="false" />
+    <file path="/DeclinaisonAdmin.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366981622632" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_154/admin_new/actions/ActionsAdminModules.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366983303828" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_154/admin_new/liste/plugins.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366983303828" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_154/admin_new/classes/PaysAdmin.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366983303828" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_154/admin_new/plugins.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366983303828" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_154/admin_new/pays.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366983303828" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_154/admin_new/actions/ActionsAdminPays.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366983303828" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_154/admin_new/classes/ProductAdmin.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366983303828" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_154/admin_new/README.md" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366983996954" ignored="false" />
+    <file path="/README.md" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1366983968514" ignored="false" />
+    <file path="/a.dummy" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1367914001645" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_154/adm/client_visualiser.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1367917094199" ignored="false" />
+    <file path="/client_visualiser.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1367917092723" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia/core/lib/Thelia/Command/Install.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370434858415" ignored="false" />
+    <file path="/Install.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370434857696" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia/local/config/database.yml.sample" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370428727006" ignored="false" />
+    <file path="/database.yml.sample" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370428440728" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia/local/config/database.yml" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370434896979" ignored="false" />
+    <file path="/database.yml" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370434896979" ignored="false" />
+    <file path="$PROJECT_DIR$/../../copark/app/config/parameters.yml" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370612524571" ignored="false" />
+    <file path="$PROJECT_DIR$/../../copark/app/cache/dev/propel/CoparkWebServiceBundle-schema.xml" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370612563737" ignored="false" />
+    <file path="$PROJECT_DIR$/../../copark/app/cache/dev/propel/buildtime-conf.xml" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370612563737" ignored="false" />
+    <file path="$PROJECT_DIR$/../../copark/app/cache/dev/appDevDebugProjectContainer.xml" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370615698624" ignored="false" />
+    <file path="$PROJECT_DIR$/../../copark/src/Copark/WebServiceBundle/Resources/config/schema.xml" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370612521285" ignored="false" />
+    <file path="/parameters.yml" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370612525686" ignored="false" />
+    <file path="$PROJECT_DIR$/../../copark/src/Copark/WebServiceBundle/Model/User.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370612965472" ignored="false" />
+    <file path="$PROJECT_DIR$/../../copark/app/config/security.yml" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370617175189" ignored="false" />
+    <file path="$PROJECT_DIR$/../../copark/app/cache/dev/appDevDebugProjectContainer.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370615698624" ignored="false" />
+    <file path="$PROJECT_DIR$/../../copark/app/config/routing.yml" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370613865758" ignored="false" />
+    <file path="/routing.yml" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370613794352" ignored="false" />
+    <file path="$PROJECT_DIR$/../../copark/src/Copark/WebServiceBundle/Controller/SecurityController.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370614022223" ignored="false" />
+    <file path="$PROJECT_DIR$/../../copark/src/Copark/WebServiceBundle/Resources/views/Security/login.html.twig" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370613931688" ignored="false" />
+    <file path="/security.yml" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370617175189" ignored="false" />
+    <file path="/config_dev.yml" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370614820018" ignored="false" />
+    <file path="$PROJECT_DIR$/../../copark/app/config/config_dev.yml" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370614820018" ignored="false" />
+    <file path="$PROJECT_DIR$/../../copark/app/cache/dev/classes.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370614940215" ignored="false" />
+    <file path="$PROJECT_DIR$/../../copark/src/Copark/WebServiceBundle/Resources/views/Admin/dashboard.html.twig" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370617093806" ignored="false" />
+    <file path="$PROJECT_DIR$/../../copark/src/Copark/WebServiceBundle/Resources/views/Default/index.html.twig" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370617121118" ignored="false" />
+    <file path="/index.html.twig" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370617121118" ignored="false" />
+    <file path="$PROJECT_DIR$/../../copark/src/Copark/WebServiceBundle/Resources/views/layout.html.twig" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370617277636" ignored="false" />
+    <file path="/layout.html.twig" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1370617277636" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia/core/lib/Thelia/Core/Template/Smarty/Plugins/Form.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1372148336431" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia/core/lib/Thelia/Form/BaseForm.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1372146283718" ignored="false" />
+    <file path="/BaseForm.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1372146191828" ignored="false" />
+    <file path="/Form.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1372148334247" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia/templates/smarty-sample/index.html" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1372148233615" ignored="false" />
+    <file path="/index.html" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1372148233615" ignored="false" />
+    <file path="/thelia.sql" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1373449606541" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_dev/fonctions/boucles.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374484976518" ignored="false" />
+    <file path="/boucles.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374497298384" ignored="false" />
+    <file path="/substitpanier.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374484052354" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_dev/fonctions/moteur.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374485297258" ignored="false" />
+    <file path="/moteur.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374497454280" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_dev/template/commande_detail.html" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374485471247" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_dev/classes/parseur/BoucleSimple.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374485904688" ignored="false" />
+    <file path="/BoucleSimple.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374497344924" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/fonctions/action.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442782" ignored="false" />
+    <file path="/action.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374488904850" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/template/commande_detail.html" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374489125888" ignored="false" />
+    <file path="/commande_detail.html" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374489102488" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/fonctions/boucles.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374497353686" ignored="false" />
+    <file path="/1.5.4.2.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374498907261" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Caracteristiquedesc.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Commande.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Navigation.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Venteprod.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Caracdispdesc.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/actions/ActionsLang.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Contenudesc.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Modules.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Accessoire.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/PluginsPaiements.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/filtres/FiltreBase.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Produitdesc.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/filtres/FiltreModuloInt.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Raisondesc.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Caracdisp.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/ChangeLog.txt" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/parseur/PexToken.interface.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Parseur.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/parseur/PexElement.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Client.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Caracval.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/parseur/BoucleSimple.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374497345937" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Reecriture.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Rubcaracteristique.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/parseur/IterationBoucle.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Dossier.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/parseur/EvalBoucle.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Declinaisondesc.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/BaseobjdescReecriture.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Devise.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Caracteristique.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Baseobjclassable.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/fonctions/image.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/PluginsClassiques.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/fonctions/url.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Rubrique.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/fonctions/hierarchie.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Lang.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/fonctions/moteur.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374497455163" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Contenu.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Panier.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Declinaison.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Adresse.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442782" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Declidisp.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442782" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/fonctions/lire.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442782" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Raison.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442782" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Pays.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442782" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Produit.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442782" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Baseobj.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442782" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Contenuassoc.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442782" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Requete.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442782" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Document.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442782" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Exdecprod.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442782" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Paysdesc.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442782" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Modulesdesc.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442782" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Venteadr.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442782" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Rubdeclinaison.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442782" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Rubriquedesc.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442782" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Declidispdesc.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442782" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Baseobjdesc.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442782" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Stock.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442782" ignored="false" />
+    <file path="$PROJECT_DIR$/../../thelia_1542/classes/Image.class.php" changelist="b1a89d17-e725-43c2-91f1-2e8e938fefc5" time="1374496442782" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="thelia" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="1.5.4.1.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/install/patch/1.5.4.1.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="0" selection-start="6" selection-end="75" vertical-scroll-proportion="-0.84615386">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="1.5.4.0.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/install/patch/1.5.4.0.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="60" selection-start="785" selection-end="785" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="1.5.3.4.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/install/patch/1.5.3.4.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="22" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="thelia.sql" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/install/thelia.sql">
+          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="873" column="28" selection-start="42209" selection-end="42209" vertical-scroll-proportion="-24.009346">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="1.5.4.2.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/install/patch/1.5.4.2.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="48" selection-start="125" selection-end="125" vertical-scroll-proportion="0.116197184">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VERSION.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VERSION.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="0" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="substitpanier.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fonctions/substitutions/substitpanier.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="106" column="49" selection-start="4537" selection-end="4555" vertical-scroll-proportion="-25.384615">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChangeLog.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChangeLog.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="40" selection-start="1096" selection-end="1096" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/install/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="20" selection-start="23" selection-end="23" vertical-scroll-proportion="-0.84615386">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/admin/actions/ActionsAdminModules.class.php" />
+        <option value="$PROJECT_DIR$/admin/liste/plugins.php" />
+        <option value="$PROJECT_DIR$/install/patch/1.5.4.php" />
+        <option value="$PROJECT_DIR$/install/patch/1.5.4.0.php" />
+        <option value="$PROJECT_DIR$/install/patch/1.5.4.1.php" />
+        <option value="$PROJECT_DIR$/fonctions/boucles.php" />
+        <option value="$PROJECT_DIR$/classes/CacheBase.class.php" />
+        <option value="$PROJECT_DIR$/admin/client_visualiser.php" />
+        <option value="$PROJECT_DIR$/fonctions/substitutions/substitpanier.php" />
+        <option value="$PROJECT_DIR$/ChangeLog.txt" />
+        <option value="$PROJECT_DIR$/install/config.php" />
+        <option value="$PROJECT_DIR$/install/thelia.sql" />
+        <option value="$PROJECT_DIR$/VERSION.txt" />
+        <option value="$PROJECT_DIR$/install/patch/1.5.4.2.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1919" />
+    <option name="y" value="-4" />
+    <option name="width" value="1922" />
+    <option name="height" value="1085" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents ProjectPane="true" />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thelia" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thelia" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thelia" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thelia" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thelia" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="install" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thelia" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thelia" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="install" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="patch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth1" value="199" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="179" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="75" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="205" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="184" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1" value="178" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../thelia_dev" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth0" value="158" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth4" value="1083" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth3" value="159" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth4" value="1104" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0" value="0" />
+    <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="RestoreUpdateTree">
+    <UpdateInfo date="Moments ago" ActionInfo="_Update">
+      <UpdatedFiles>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated from server" />
+          <option name="myStatusName" value="Changed on server" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CHANGED_ON_SERVER" />
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Updated" />
+            <option name="myStatusName" value="Changed" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="UPDATED" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Created" />
+            <option name="myStatusName" value="Created" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="CREATED" />
+            <PATH vcs="svn" revision="2392">$PROJECT_DIR$/install/patch/1.5.4.2.php</PATH>
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Deleted" />
+            <option name="myStatusName" value="Deleted" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="true" />
+            <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Restored" />
+            <option name="myStatusName" value="Will be restored" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="RESTORED" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Modified" />
+          <option name="myStatusName" value="Modified" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MODIFIED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Skipped" />
+          <option name="myStatusName" value="Skipped" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="SKIPPED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with conflicts" />
+          <option name="myStatusName" value="Will be merged with conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_CONFLICTS" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with tree conflicts" />
+          <option name="myStatusName" value="Merged with tree conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with property conflicts" />
+          <option name="myStatusName" value="Will be merged with property conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged" />
+          <option name="myStatusName" value="Will be merged" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Not in repository" />
+          <option name="myStatusName" value="Not in repository" />
+          <option name="mySupportsDeletion" value="true" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UNKNOWN" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Locally added" />
+          <option name="myStatusName" value="Locally added" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="LOCALLY_ADDED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Locally removed" />
+          <option name="myStatusName" value="Locally removed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="LOCALLY_REMOVED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Switched" />
+          <option name="myStatusName" value="Switched" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="SWITCHED" />
+        </FILE-GROUP>
+      </UpdatedFiles>
+    </UpdateInfo>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value="Show Includes,Show Inherited" />
+  </component>
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="true" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <configuration useDefault="true">$USER_HOME$/.subversion</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b1a89d17-e725-43c2-91f1-2e8e938fefc5" name="Default" comment="" />
+      <created>1365424241710</created>
+      <updated>1365424241710</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Update Cnx file if needed">
+      <created>1366633891103</created>
+      <updated>1366633891103</updated>
+    </task>
+    <task id="LOCAL-00002" summary="change method to read plugin xml file.">
+      <created>1366638686103</created>
+      <updated>1366638686103</updated>
+    </task>
+    <task id="LOCAL-00003" summary="delete default install plugin, plugin can now be choose during install process">
+      <created>1366639068102</created>
+      <updated>1366639068102</updated>
+    </task>
+    <task id="LOCAL-00004" summary="correction du process de maj et de l'enregistrement de la table variable...">
+      <created>1366731769111</created>
+      <updated>1366731769111</updated>
+    </task>
+    <task id="LOCAL-00005" summary="corerction installation du sql">
+      <created>1366875643104</created>
+      <updated>1366875643104</updated>
+    </task>
+    <task id="LOCAL-00006" summary="suppression de logs oubliés">
+      <created>1367913906185</created>
+      <updated>1367913906185</updated>
+    </task>
+    <task id="LOCAL-00007" summary="vérification de l'unicité du mail lors de la modif d'un client dans le BO">
+      <created>1367917478114</created>
+      <updated>1367917478114</updated>
+    </task>
+    <task id="LOCAL-00008" summary="correction du code pays de madagascar">
+      <created>1373449907147</created>
+      <updated>1373449907147</updated>
+    </task>
+    <task id="LOCAL-00009" summary="mise à jour du changelog">
+      <created>1374490333152</created>
+      <updated>1374490333152</updated>
+    </task>
+    <task id="LOCAL-00010" summary="ajout de la boucle REPRISEPAIEMENT&#10;">
+      <created>1374491042102</created>
+      <updated>1374491042102</updated>
+    </task>
+    <task id="LOCAL-00011" summary="ajout de l'action de reprise de paiement&#10;&#10;">
+      <created>1374491083102</created>
+      <updated>1374491083102</updated>
+    </task>
+    <task id="LOCAL-00012" summary="intégration de la reprise de paiement dans le template de base">
+      <created>1374491159102</created>
+      <updated>1374491159102</updated>
+    </task>
+    <task id="LOCAL-00013" summary="changement numéro de version pour mise à jour&#10;">
+      <created>1374491229103</created>
+      <updated>1374491229103</updated>
+    </task>
+    <task id="LOCAL-00014" summary="changement du numéro de version dans VERSION.txt&#10;">
+      <created>1374491854103</created>
+      <updated>1374491854103</updated>
+    </task>
+    <task id="LOCAL-00015" summary="correction patch  1.5.4.2">
+      <created>1374499116118</created>
+      <updated>1374499116118</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1919" y="-4" width="1922" height="1085" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975295" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975295" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2802139" sideWeight="0.3340494" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2802139" sideWeight="0.33619764" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975295" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32975295" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975295" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction patch  1.5.4.2" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="Update Cnx file if needed" />
+    <MESSAGE value="change method to read plugin xml file." />
+    <MESSAGE value="delete default install plugin, plugin can now be choose during install process" />
+    <MESSAGE value="correction du process de maj et de l'enregistrement de la table variable..." />
+    <MESSAGE value="corerction installation du sql" />
+    <MESSAGE value="suppression de logs oubliés" />
+    <MESSAGE value="vérification de l'unicité du mail lors de la modif d'un client dans le BO" />
+    <MESSAGE value="correction du code pays de madagascar" />
+    <MESSAGE value="mise à jour du changelog" />
+    <MESSAGE value="ajout de la boucle REPRISEPAIEMENT&#10;" />
+    <MESSAGE value="ajout de l'action de reprise de paiement&#10;&#10;" />
+    <MESSAGE value="intégration de la reprise de paiement dans le template de base" />
+    <MESSAGE value="changement numéro de version pour mise à jour&#10;" />
+    <MESSAGE value="Ajout fichier mise à jour 1.5.4.2&#10;" />
+    <MESSAGE value="changement du numéro de version dans VERSION.txt&#10;" />
+    <MESSAGE value="correction patch  1.5.4.2" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/fonctions/moteur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/PluginsTransports.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Mail.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Commande.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="126" column="22" selection-start="4499" selection-end="4499" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install/configuration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="149" selection-end="149" vertical-scroll-proportion="-0.7082353" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install/choixbase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install/patch/1.5.4.0.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="60" selection-start="785" selection-end="785" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install/patch/1.5.3.4.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="22" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fonctions/substitutions/substitpanier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="49" selection-start="4537" selection-end="4555" vertical-scroll-proportion="-25.384615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChangeLog.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="40" selection-start="1096" selection-end="1096" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="20" selection-start="23" selection-end="23" vertical-scroll-proportion="-0.84615386">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install/patch/1.5.4.1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="6" selection-end="75" vertical-scroll-proportion="-0.84615386">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VERSION.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install/thelia.sql">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="873" column="28" selection-start="42209" selection-end="42209" vertical-scroll-proportion="-24.009346">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install/patch/1.5.4.2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="48" selection-start="125" selection-end="125" vertical-scroll-proportion="0.116197184">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

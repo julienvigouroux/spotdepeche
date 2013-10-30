@@ -1,0 +1,102 @@
+#PARAM_FOND_securise=1 #PARAM_FOND_panier=1 #PARAM_FOND_transport=1
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+#INCLURE "template/meta.html"
+#INCLURE "template/tag_stats.html"	
+</head>
+<body>
+<div id="principale">
+	<div id="interface">
+#INCLURE "template/entete.html"
+#INCLURE "template/menu.html"
+		<div id="chemin" class="grid_12"><a href="#URLSOMMAIRE">::accueil::</a> / ::recapitulatifcommande::</div>
+		<div id="contenu" class="grid_12">
+			<div id="etapesDeCommande">
+				<ul>
+                    <li><span>1</span>::panier::</li>
+                    <li><span>2</span>::facturationlivraison::</li>
+                    <li class="selection"><span class="chiffreSelection">3</span>::verifcommande::</li>
+                    <li><span>4</span>::paiementsecurise::</li>
+				</ul>
+			</div>		 
+			<h2>::recapitulatifcommande:: </h2>
+            <form action="#URLFOND(commande)" id="formulaire" method="post">
+            <input type="hidden" name="action" value="codepromo" />
+            <table id="table-panier">
+            	<tr>
+            		<th colspan="2">::nomarticle::</th>
+            		<th>::prixunitaire:: </th>
+           		  <th>::quantite::</th>
+           		  <th>::total::</th>
+           	  </tr>
+            	<THELIA_panier type="PANIER">
+            	<tr>
+                    <td class="ligne">
+                        <THELIA_IMAGE type="IMAGE" num="1" produit="#ID"  largeur="80">
+                        <img src="#IMAGE" alt="#PRODTITRE" title="#PRODTITRE"/>
+                        </THELIA_IMAGE>
+                    </td>
+                    <td class="ligne">#TITRE - #REF</td>
+                    <td class="ligne">#PRIXU €</td>
+                  <td class="ligne">#QUANTITE</td>
+                  <td class="ligne">#TOTAL €</td>
+            	</tr>
+            </THELIA_panier>
+            <tr>
+            	<th colspan="4">::fraislivraison:: </th>
+            	<th>#PANIER_PORT €</th>
+            </tr>
+            #FILTRE_different(#PANIER_REMISE||0||
+            <tr>
+            	<td colspan="4">::remise:: </td>
+            	<td>#PANIER_REMISE €</td>
+            </tr>)
+			#FILTRE_egalite(#PANIER_REMISE||0||
+            <tr>
+				<td colspan="5">
+				<label class="codeDeReduction">::codereduc::</label>
+				<input name="code" type="text" class="codeDeReduction"/>
+				<button type="submit" class="boutonMemeLigneQuInput">OK</button>
+				</td>
+            </tr>)       
+            <tr>
+            	<th colspan="4"></th>
+            	<th class="total">::total:: : #PANIER_TOTPORT €</th>
+            </tr>
+            </table>
+            </form>
+ 			<div class="adresseDeLivraisonRecap">				
+				<h3>::adresselivraison::</h3>
+				<div class="contenu">
+            		<THELIA_adrcours type="ADRESSE" adresse="#ADRESSE_ACTIVE">
+            		#RAISON #PRENOM #NOM	<br />
+            		#ADRESSE1 #ADRESSE2 #ADRESSE3<br />
+            		#CPOSTAL #VILLE<br/>
+            		<THELIA_pays type="PAYS" id="#PAYS">
+            		#TITRE	
+            		</THELIA_pays>
+            		</THELIA_adrcours>
+				</div>
+				<a href="#URLPREC" class="modifierOuAjouter bouton">::modifadresse::</a>
+			</div>
+
+			<h2>::choixmodepaiement:: </h2>
+			<div class="choixDuReglement">
+            	<ul>
+					<THELIA_PAIEMENT type="PAIEMENT">
+					<li><a href="#URLPAYER"><span class="modeDeReglement">#TITRE</span><span class="choisir"></span></a></li>
+				</THELIA_PAIEMENT>
+                </ul>
+			</div>
+		</div>
+	</div>
+</div>
+#INCLURE "template/pied.html"
+#INCLURE "template/signature.html"
+</body>
+</html>

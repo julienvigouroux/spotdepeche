@@ -1,0 +1,3 @@
+1.0.1 : 
+    correction gestion des erreurs affichées grâce au error_reporting de la version 1.5.3.4 de Thelia
+    Gestion de l'autoload pour les versions de Thelia >= 1.5.3.4

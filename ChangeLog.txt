@@ -1,0 +1,677 @@
+1.5.4.2
+    Correction code pays pour Madagascar
+    Ajout de la substitution #PANIER_NBART_TOTAL permettant d'avoir le nombre total d'articles présents dans le panier
+    Possibilité pour un client de payer une commande non payé depuis son compte
+    Ajout de la boucle REPRISEPAIEMENT (http://thelia.net/wiki/index.php/La_boucle_REPRISEPAIEMENT)
+
+1.5.4.1
+    Correction du sql d'installation, empêchant la création de la table pays
+
+1.5.4
+    Boucle CARACVAL: ajout des classements alpha, alphainv, manuel
+    Ajout des variables qualite_vignettes_jpeg et qualite_vignettes_png, qui permettent de fixer depuis le back office la qualité JPEG et PNG des vignettes générées. Valeur par défaut 75 et 7.
+    Ajout du paramètre montantmini à la boucle Transport, permettant de n'afficher que les transports dont le montant est supérieur ou égal à la valeur indiquée.
+    Ajout dans la liste des clients dans le Back Office de la date de création du client, avec tri possible.
+    Correction de la génération des miniatures pour les GIFs/PNGs sans transparence
+    Correction d'un bug sur le test des extensions valides dans l'upload de fichiers dans le Back Office.
+    Le cache memcached est désormais opérationnel. Il suffit de donner une valeur > 0 à la variable memcache.
+    Les modules peuvent maintenant être classés
+    Protection contre les erreurs Fatal error: Uncaught exception 'TheliaException' with message 'Répertoire du module xxxxx non trouvé'
+    Correction du <b>Fatal error</b>:  Class 'Tlog' not found in <b>/.../www/admin/pied.php</b> on line <b>9</b>
+    Factorisation du code des Baseobj classables dans Baseobjclassable
+    Mise en place du nouveau format de descripteur de plugin (plugin.xml), avec migration automatique des anciens formats.
+    Correction initialisation de la devise quand la session n'existe pas.
+    Ajout de la méthode getProduits() dans la classe commande qui permet de retourner la liste des venteprod de la commande (tableau d'objet venteprod)
+    Ajout du point d'entrée avantdeconnexion appelé au début de l'action de déconnexion. L'objet client instancié est passé en paramètre.
+
+1.5.3.4
+    Utilisation de constantes pour le nom des variables de configuration des langues
+    Correction du calcul de l'URL dans la boucle LANGUE
+    Dans la boucle PANIER, #PRODURL retourne l'URL ré-écrite si elle est disponible.
+    La mise en place du error_reporting est placée dans le fichier fonctions/error_reporting.php, avec prise en compte du E_STRICT de PHP 5.4
+    Optimisation, nettoyage et corrections mineures sur le template de base.
+    Prise en compte de l'utilisation de magic_quote_gpc lorsque sanitize_admin est activé
+    Correction du listing des commandes dans l'admin
+    Ajout d'un écran dans l'admin pour configurer la liste blanche des urls utilisables dans les iframes si sanitize_admin est activé
+    Changement du processus de mise à jour permettant une mise à jour plus aisé depuis une version <= 1.5.0
+
+1.5.3.3
+    Ajout d'includes manquants dans admn/declinaison_modifier.php
+    Corection de l'incompatibilité de colissimo avec la 1.5.3 (Message::supprimer inexistant)
+    Mise en place d'un autoloader. Il n'est plus nécessaire d'inclure toutes les classes dans un plugin, l'autoloader s'en charge. Si l'on souhaite faire appel à l'autoloader en dehors
+    du moteur, il suffit d'inclure le fichier fonctions/autoload.php (http://thelia.net/wiki/index.php?title=Auto_chargement_des_classes)
+    Les méthodes supprimer sont désormais supprimer
+
+
+1.5.3.1 et 1.5.3.2
+    Correction du sql d'installation
+    refactorisation du système de mise à jour de Thelia
+
+1.5.3
+    Supprimer une rubrique permet de supprimer tous ses produits et sous-rubriques.
+    Supprimer un dossier permet de supprimer tous ses contenus et sous-dossiers.
+    Ajout d'une variable "sanitize_admin" dans la table variable permettant de définir si l'on souhaite que les paramètres get/post de l'admin soient filtré. Mettre à 1 pour filtrer, 0 sinon. En mettant à 0 le fonctionne actuel de l'admin est gardé.
+    Ajout du point d'entrée clear_cache appelé lorsque le cache est volontairement vidé depuis l'interface d'administration
+    Création d'une page nexisteplus.html qui sera appelée si un produit/contenu/rubrique/dossier qui a été supprimé est appelé. Par défaut on fait une redirection 301 sur l'index. Cette page peut être personnalisée, plus d'infos en ouvrant cette dernière.
+    Amélioration de la création d'un compte client depuis l'admin : Messages d'erreur plus clairs, utilisation des classes Raison et Raisondesc, possibilité de choisir un parrain
+    Suppression de l'utilisation de realpath
+    remplacement de dirname(__FILE__) par __DIR__
+    Ajout de l'argument "separateur" dans le boucle TEST, pris en compte lorsque le test vaut "dansliste", et qui permet d'indiquer le séparateur de valeurs de l'argument val. Par défaut ',' est utilisé.
+    Creation de la page nexisteplus.html dans le template. Lorsqu'une url reecrite correspond à un produit/contenu/rubrique/dossier qui n'existe plus, on appelle ce fond. Par défaut il effectue une redirection 301 vers la page d'acceuil. Consultez le fichier nexisteplus.html pour plus de solutions.
+    Ajout de la substitution #AJOUTER_PARAMETRE(url,liste-de-parametres), qui permet d'ajouter des paramètres à une URL en tenant compte du rewriting d'URL. Exemple: #AJOUTER_PARAMETRE(#URLCOURANTE,p1=abc&p2=cde)
+    Changement du template par défaut. Template web responsive mettant en oeuvre le plus de boucle possible.
+
+1.5.2
+	/!\ Les méthodes statiques Lang::xxx() n'existent plus, et sont remplacées par ActionsLang::instance()->xxx();
+
+	Dans la configuration des logs, il est possible d'utiliser '!' pour désactiver les logs d'un fichier particulier.
+    Lors d'un changement de langue dans l'URL, redirection vers l'URL ré-écrite dans cette langue, si elle existe.
+    Lors de l'accès à une page via une URL ré-écrite, on fixe la langue courante à celle définie dans l'URL.
+    Gestion améliorée des devises. Mise en place de substitutions "devise".
+    Mise en place du pattern MVC pour les devises. Voir ActionsDevises / ActionsAdminDevises
+    Mise en place du modèle MVC pour la gestion des langues. Voir ActionsLang et ActionsAdminLang
+    Correction de la procédure d'installation pour que la mise à jour d'une version pre-1.4.4 fonctionne
+    Correction de la procédure d'installation pour l'indexation full text des tables *desc.
+    Fourniture des plugins de base: cheque, virement, colissimo, tinymce
+    Correction des fonctions de recherche
+    Amélioration de la gestion des codes promo. Attention les codes promo actifs avant la mise à jour sont désactivés, il faut les revérifier dans l'interface et les réactiver.
+    Rajout de paramètre d'entrée et de sorties dans les boucles - plus de details sur le wiki des boucles
+    Possibilité de classement multiple dans la boucle produit - voir le wiki de la boucle produit
+    Amélioration de la gestion des produits parents dans les methodes d'ajout/suppression/modiufication du panier
+    Les produits peuvent être liés à d'autre dans les commandes
+    Stockage de la date de création des clients
+    Ajout du point d'entrée apresVenteprod
+
+1.5.2 Beta 1
+	PHP 5.3 est nécessaire pour passer en 1.5.2
+	Ajout des paramètres "urlok" et "urlerr" aux formulaires (et aux méthodes qui les traitent), afin de permettre la redirection vers n'importe quelle URL:
+		<input type="hidden" name="urlok" value="#URLPAGERET" />
+		<input type="hidden" name="urlerr" value="#URLFOND(lefondquejeveux,errform=1)" />
+	Le comportement par défaut est appliqué si l'un, l'autre ou les deux paramètres sont absents. urlerr doit comporter le paramètre errform=1 pour que le moteur Thelia applique les traitements d'erreur de formulaire.
+	Ajout de l'action modifiermotdepasse
+	Les substitutions "Adresse" sont complétées (cf. le Wiki pour les détails)
+	La boucle Adresse accepte le paramètre "id" (identique au paramètre "adresse", qui devient obsolète).
+	Les formulaires de création et de modification d'adresse de livraison sont désormais complètement gérables par Thelia, y compris les retours d'erreurs, et les substitutions de type #VAR[xxxx]
+	Ajout des templates livraison_modifier_err.html et livraison_adresse_err.html
+	Gestion des langues: on peut maintenant utiliser un seul domaine pour toutes les langues.
+	Ajout de #PANIER_REMISE_CLIENT et #PANIER_REMISE_PROMO
+	Correction bug dans boucle Adresse: affichage de l'adresse de livraison par défaut impossible
+	Ajout de la methode statique Variable::ecrire();
+	Ajout des méthode liste() et insert_id() à Cnx.
+	Amélioration des performances : ajout d'un cache des instances de plugins, débrayable via la variable "utilisercacheplugin". Ce cache est inactif par défaut, pas souci de compatibilité avec les plugins existants.
+	La paramètre "exact" de la boucle image peut prendre la valeur "2", ce qui a pour effet de générer une image qui a exactement la taille demandée, en la recadrant (crop) si nécessaire.
+	Ajout de la fonction de log (classes Tlog). Voir le wiki pour plus d'informations.
+	Ajout de la substitution globale #CODELANG
+	Ajout des informations ISO 3166 (numéro, code alpha 2 et alpha 3) à la table pays.
+	Ajout des variables #TVA, #NUMEROISO, #CODEISO2 et #CODEISO3 à la boucle PAYS.
+	Chasse aux appel directs aux fonctions mysql_xxx. Utiliser désormais les méthodes de Cnx (pour pouvoir à terme basculer sans douleur vers PDO, par exemple...)
+	Gestion des langues: le choix est offert entre forcer l'utilisation de la langue indiquée (en F.O et B.O), ou utiliser la langue par défaut si une traduction manque.
+	Il est possible d'ajouter et de supprimer des langues depuis le back-office.
+	Ajout du code ISO 639 (fr, en, es, etc...) pour chaque langue.
+	Une nouvelle boucle LANGUE est disponible. Elle permet de récupérer les langues définies.
+	Ajout des substitutions #DOSSIER_URL, #CONTENU_URL, #PRODUIT_URL et #RUBRIQUE_URL. La substitution #RUBRIQUE_REWRITEURL devient obsolète.
+	Ajout des cases à cocher "En ligne" dans la liste des rubriques, dossiers et contenus.
+	Ajout de la variable #__NOMBRE__ a toutes les boucles. Elle contient le nombre total de resultats retournés par la boucle.
+	Dans le B.O., on peut ajouter de nouvelles variables, et supprimer les variables dont l'attribut protege vaut 0
+	Ajout de #NOM (le nom du plugin de transport) et #LOGO (s'il existe, un fichier logo.jpg|jpeg|png|gif) à la boucle Transport.
+	Les tables 'desc' doivent utiliser le moteur MyISAM pour pouvoir supporter des index full text (cf. http://thelia.net/forum/viewtopic.php?id=8270)
+	Le cache de simplepie est désormais dans client/cache/flux au lieu de admin/cache
+	Ajout de la méthode add dans les classes déclinaison, declidispdesc permettant de fixer classement si non renseigné lors de l'enregistrement
+	Ajout des méthodes static exist_* (Client::exist_email('toto@toto.fr'), Produit::exist_id(1), Produitdesc::exist_chapo('foo'), etc)
+	Possibilité de rajouter sa propre traduction dans l'admin via un plugin. Il faut placer le fichier de traduction (1.php, 2.php) dans le répertoire lang_admin du plugin et mettre sa traduction dans le tableau global $GLOBALS['dico_admin'] (ex : $GLOBALS['dico_admin']['Parametre'] = 'Paramètre')
+	Ajout des points d'entrée de gestion des codes promotion: ajoutpromo, majpromo et suppromo, acceptant en paramètre un objet Promo.
+	Ajout du point d'entrée substitutionsventeprodmailcommande($venteprod), qui permet de customiser la sortie de chacun des articles de la pseudo boucle <VENTEPROD> dans le mail de confirmation commande
+	Ajout de la variable emailscommande, qui contient une liste d'emails séparés par des virgules, et permet d'envoyer les mails de confirmation de commande à plusieurs administrateurs
+
+1.5.1
+	Correction de la boucle TRANSPORT induisant un souci sur la page adresse du template.
+	Correction de chemin d'accès au template de bon de livraison PDF
+	Ajout du paramètre "pays" à la boucle TRANSPORT pour permettre un affichage des frais de port même si aucun client n'est connecté
+	Ajout du point d'entrée "substitutionsmailcommande", permettant aux plugins de modifier le resultat des substitutions dans les mails de commande
+	Correction: la suppression d'un administrateur est de nouveau possible
+	Ajout de la variable #RAISONID (identifiant de la raison) aux boucles Adresse et Venteadr
+	Corrections des traductions dans admin/commande_details.php
+	Ajout de la variable #STATUTID à la boucle commande
+	Ajout de la méthode PluginClassique->getNom()
+	Ajout de la méthode PluginPaiement->est_module_de_paiement_pour($commande)
+	Ajout de la méthode PluginTransport->est_module_de_transport_pour($commande)
+	Creation de la méthode Mail::envoyer() pour envoyer un mail simplement (et accessoirement éviter la recopie de code)
+	On redirige vers "adresse" si le transport n'est pas défini.
+	Optimisation du redimensionnement des images, avec ajout du paramètre "exact" à la boucle image, qui permet s'il est présent d'obtenir une image ayant exactement la hauteur et la largeur demandée, en ajoutant des bordures si nécessaire.
+	Ajout de la substitution #URLFOND(nom-du-fond[,parametres]), pour remplacer la lourdeur de #VARIABLE(urlsite)/?fond=nom-du-fond&parametres. Exemple: #URLFOND(recherche,motclef=abcd&page=2) retourne http://www.monsite.com/?fond=recherche&motclef=abcd&page=2. #URLFOND(recherche) retourne http://www.monsite.com/?fond=recherche
+	Optimisation des substitutions de variables.
+	Ajout de la methode statique Variable::lire();
+	Ajout dans Cnx des methodes fetch_object, num_rows et get_result, dans une première tentative pour encapsuler les accès BD.
+	Ajout dans url.php de la fonction urlfond(), qui centralise le calcul des URLs de type /?fond=x
+	Suppression du plugin de compatibilité 1.4.x (disponible sur contrib.thelia.net)
+	Ajout de la variable verifstock empêchant l'ajout ou la modification de la quantité d'un article au panier si son stock est inférieur à
+	la quantité demandée (si verifstock = 1)
+	Mise à jour du htaccess. Veuillez supprimer la ligne RewriteCond %{QUERY_STRING} ^$ (dans le cas d'un template 1.5.x)
+	Ajout du filtre Supegal : supérieur ou égal en natif
+	Amélioration de la gestion des urls pour éviter le "duplicate content"
+	URL par langue configurable. La variable urlsite devient obsolète mais reste présente pour la compatibilité. Dans une version ultérieure,
+	HTTP_ACCEPT_LANGUAGE sera pris en compte
+	Suppression de #PARAM_FOND_obligetelfixe et #PARAM_FOND_obligetelport. Passage dans le formulaire d'inscription. (mettre à jour le
+	template)
+
+1.5.0
+	Passage en UTF-8.
+	Ajout d'un paramètre parent dans la boucle PANIER ainsi que dans l'ajout au panier (permet d'associer un produit "enfant" à un produit "père"). Pratique pour ajouter un produit du type "papier cadeau" par exemple).
+	Nettoyages divers.
+	Intégration du parseur de Franck.
+	Correction d'un bug dans la boucle DECLINAISON.
+	Rewriting en base et activable depuis la gestion des variables (#REWRITEURL n'est plus nécessaire).
+	Rewriting revu. Url réécrite modifiable et gestion automatique des redirections 301.
+	Ajout du point d'entrée varfond après la lecture des variables de fond prenant en paramètre la 1ère ligne du fond.
+	Ajout du point d'entrée redirige dans la fonction de redirection prenant en paramètre l'url de redirection.
+	Ajout d'une boucle raison et internationalisation de la raison.
+	Amélioration de la procédure d'installation.
+	Ajout de l'argument niveau dans la boucle RUBRIQUE.
+	Ajout de l'argument rubcourante dans la boucle PRODUIT.
+	Mise à jour de tinymce.
+	Mise à jour du template de base en version multilingue.
+	Seuls les plugins compatibles avec la version de Thelia en cours sont activables.
+	Mise à jour des indexes MySQL.
+	Les points d'entrées ajoutprod, ajoutrub, ajoutdos, ajoutcont, modprob, modrub, moddos, modcont, supprod, suprub, supcont, supdos ont été modifiés. Un seul plugin sur l'espace de contribution l'utilise. (imglang) Pensez à la mise à jour.
+	Refonte du système de filtres
+	Elimination des lignes vides en sortie du moteur
+	Ajout de la gestion des pays
+	Refonte de la gestion interne des plugins
+	Refonte de la gestion des factures. Template HTML compatible avec les boucles Thelia.
+	Ajout de la modification des informations des plugins
+	Ajout de htmlpurifier pour sécuriser les entrées
+	Changement des références clients, commandes pour l'UTF-8
+
+	Remarque : N'hésitez pas à mettre à jour vos pieds de page "propulsé par THELIA" afin de pointer vers thelia.net
+
+1.4.4
+	Correction gestion des langues dans l'admin sur les contenus.
+	Possibilité d'utiliser un serveur SMTP pour l'envoi de mail (configuration dans l'admin).
+	Rajout de la fonction avantpromo utilisable dans les plugins qui recoit en paramètre le code promo.
+	Rajout de la fonction aprespromo utilisablte dans les plugins qui est appelé après l'ajout du code promo dans le process de commande.
+	Le classement (alpha, alphainv, manuel) est opérationnel dans la boucle déclinaison.
+	Correction des trous dans le classement lors d'un déplacement de rubrique, de dossier.
+	Classement des valeurs de caracteristiques et de déclinaisons.
+	Rajout du point d'entrée apres_creerlivraison qui reçoit en paramètre un objet adresse.
+	Rajout du point d'entrée apres_modifierlivraison qui reçoit en paramètre un objet adresse.
+	Correction d'un bug lors de l'enregistrement dans une nouvelle langue (produit, rubrique, contenu, dossier).
+	Visualisation du mode de transport utilisé dans l'interface d'administration.
+	Sauvegarde des promos utilisées lors d'une commande => visualisation dans l'interface d'administration.
+	Mise à jour du plugin WeXpay.
+	Mise en place de constructeur avec argument. Par défaut charger(id) est choisi sauf pour les cas suivants :
+	  - caracdispdesc : charger_caracdisp(caracdisp,lang=1)
+	  - caracteristiquedesc : charger(caracteristique,lang=1)
+	  - caracval : charger(produit,caracteristique);
+	  - contenudesc : charger(contenu,lang=1)
+	  - declidispdesc : charger_declidisp(declidisp,lang=1)
+	  - declinaisondesc : charger(declinaison,lang=1)
+	  - documentdesc : charger(document,lang=1)
+	  - exdecprod : charger(produit,declidisp)
+	  - message : charger(nom)
+	  - messagedesc :charger(message,lang=1)
+	  - modulesdesc : charger(plugins,lang=1)
+	  - paysdesc : charger(pays,lang=1)
+	  - produit : charger(ref)
+	  - produitdesc : charger(produit,lang=1)
+	  - rubriquedesc : charger(rubrique,lang=1)
+	  - stock : charger(declidisp,produit)
+	  - variable : charger(nom)
+	Ajout du point d'entrée modrub(id) qui est appelé lors de la modification d'une rubrique comme le fait modprod
+	Ajout du module de paiement moneybookers
+	Ajout du module de paiement systempay
+	Ajout du paramètre "stockmini" à la boucle declinaison
+	Creation de la constante TABLE dans les classes mappées en BD, afin de pouvoir utiliser nom_classe::TABLE au lieu d'instancier un objet pour utiliser $obj->table
+	Ajouts du paramètre "exclusion" à la boucle Caracteristique
+	Diverses corrections de bugs.
+	Optimisation des substitutions panier
+	Externalisation du calcul des remises
+	Ajout du point d'entrée calc_remise(&$remise) après le calcul de la remise.
+	Ajout d'un point d'entrée avantboucle prenant en param un tableau contenant $type_boucle, $args, $texte, $nom_boucle
+	Ajout d'un point d'entrée supcli dans l'admin avant la suppression d'un client.
+	Ajout des points d'entrée ajoutcli, ajoutprod, ajoutcont, ajoutrub, ajoutdos, supprod, supcont, suprub, supdos, modcont et moddos
+
+1.4.3.1
+	Diverses corrections de bugs.
+
+1.4.3
+	Mise à jour de sécurité.
+	Diverses corrections de bugs.
+	Internalisation du calcul du montant à payer dans le moteur de THELIA au lieu de placer ce calcul dans les plugins de type paiement. (permettant de jouer sur le montant dans aprescommande) --> pensez à mettre à jour vos modules de paiement pour profiter de cette nouveauté.
+	Ajout de l'entreprise dans les adresses de livraison.
+	Jquery 1.4.2.
+	Optimisation de la connexion à la base de données.
+	Modification de la gestion des factures (pensez à mettre à jour client/pdf/facture.php).
+	Possibilité de défalquer le stock à la commande ou au passage en statut payé. (ajout d'un attribut à la classe PluginsPaiements $defalqcmd, prenant pour valeur 0 ou 1).
+	Inclusion récursive (possibilité de mettre des #INCLURE dans des fichiers déjà inclus).
+	Rajout dans l'archive de Thelia du moyen de paiement CMCIC (http://contrib.thelia.fr/spip.php?article143)
+	Mise à jour de sécurité du plugin TinyMCE (pensez à remplacer client/plugins/tinymce)
+	Ajout d'une variable emailfrom paramétrable permettant de choisir l'adresse source lors de l'envoi des mails de confirmation.
+	Ajout d'une variable memcache permettant d'activer ou de désactiver l'utilisation de memcache, mais n'apporte pas réellement de gain de performance pour l'instant nous déconseillons donc de l'utiliser.
+	Compatibilité avec PHP 5.3.
+	Ajout de #NOUVEAU[si oui...][si non...] comme pour #PROMO[si oui...][si non...]
+	Suppression de ParsePHP dans le moteur de THELIA. Un plugin permettra un fonctionnement similaire au besoin (mais toujours déconseillé)
+	Rajout du point d'entrée "predemarrage" qui sera appelé avant l'analyse du moteur (c'est désormais le premier point d'entrée dans le moteur).
+	mise à jour de pclzip
+
+
+1.4.2.1
+	Correction des substitutions lors de l'envoi du mail de confirmation (suite au passage en preg)
+	Correction d'un soucis dans la gestion des droits admin (dans l'interface d'administrateur)
+	Correction d'un problème lors de la suppression d'une rubrique (suppression d'images)
+
+1.4.2
+	Mise à jour de sécurité
+	Modification des étapes d'installation
+	Suppression des appels ereg dans le code de THELIA (dépréciées)
+	Mise en place de la gestion des droits dans l'interface d'administration (1er niveau)
+
+1.4.1
+	Optimisation de l'admin
+	ajout du point d'entrée "title" dans l'admin (possibilité de rajouter du code dans le <head> </head> de la page)
+	Suppression de tinymce et passage en plugin (pour les mises à jour veuillez penser à copier client.orig/plugins/tinymce dans votre répertoire client/plugins puis d'activer le plugins)
+
+1.4.0
+	Refonte de l'interface d'administration
+	Nouveau template de base
+	Mise en place des places des mails au format HTML
+	Ajout du multipages sur client/pdf/modeles/livraison.php (mettre à jour si vous ne l'avez pas modifié)
+	Ajout de la boucle VENTEADR
+	Ajout de la boucle CHEMINDOS
+
+1.3.9
+	Mise à jour de sécurité
+	Simplification du template de base
+	Ajout de la recherche par postscriptum (PRODUIT, CONTENU)
+	Ajout du point d'entrée avantcommande
+	URL rewriting des produits modifiés (apparition du titre). Si vous utilisez le rewriting, n'oubliez pas d'effectuer un redirect permanent sur les anciennes URL
+	Ajout de la sortie #PRODUIT dans la boucle CARACVAL (id du produit)
+	Ajout du point d'entrée rubriquemodifier dans l'admin. Utiliser plugin_admin_pre.php pour récupérer les opérations à effectuer
+	Correction de différents bugs mineurs
+	Implémentation de la librairie phpmailer pour l'envoi des mails, donc possibilité d'envoyer des mails au format HTML. La librairie est enregistré dans le répertoire lib.
+	Jquery est intégré dans le répertoire lib à présent
+
+1.3.8
+	Ajout d'un point d'entré dans l'admin au niveau de caracteristique_modifier.php
+	Correction de l'affichage de l'écotaxe (#ECOTAXEHT et #ECOTAXE)
+	Correction de la boucle CARACDISP (soucis si on passe num mais pas deb)
+	Ajout de l'argument exclurub dans la boucle PRODUIT (exclure une ou des rubriques)
+	Simplification du template de base
+	Obligation du mot de passe à 4 caractères minimum au lieu de 6 (simplification pour l'acheteur)
+	Ajout de la substitution #FOND globale qui retourne le fond utilisé
+	Modification de la page promo (admin) afin de simplifier le vocabulaire
+	Modification de la page commande_details (admin), ajout de l'adresse de facturation + livraison
+	Les messages corpscommande1 et corpscommande2 deviennent mailconfirmcli et mailconfirmadm
+	Ajout d'un intitulé au niveau des messages
+	Simplification de l'installation de THELIA
+	Pensez à mettre à jour les plugins expeditor, multifact (si vous les utilisez) en prenant celui fourni dans l'archive de la 1.3.8
+	Mettez à jour client/pdf/modeles/facture.php et client/pdf/modeles/livraison.php
+	Correction d'un soucis sur la récupération du N° intracommunautaire
+	Correction de l'ecotaxe HT
+	Correction des subsitutions du PluginsPaiements
+	Boucle commande : correction de la sortie #ADRESSE
+	Classement manuel pour les caractéristiques
+
+	Cette mise à jour contient une modification de la base de donnée. Après remplacement des fichiers, connectez-vous à
+	http://www.votrethelia.com/install/
+
+1.3.7
+	Récupération des informations sur les plugins depuis contrib.thelia.fr (affichage de "vrais" titre dans l'administration)
+	Possibilité d'ajouter via un plugin du code au niveau de admin/pre.php
+	Ajout d'un point d'entré dans admin/contenu_modifier.php pour les plugins
+	Ajout du POSTSCRIPTUM en plus du TITRE, CHAPO, DESCRIPTION
+	Possibilité d'ajout un surplus de coût au niveau d'une valeur de déclinaison
+	Possibilité d'ajouter dans le menu de gauche un raccourci vers un module d'administration.
+	Ajout d'un point d'entrée pour les plugins sur accueil.php (admin)
+	Modification des boucles PRODUIT et PANIER pour les revendeurs, tout sera en TTC, il suffira d'utiliser PRIXHT par exemple pour 	avoir le prix ht
+	Si vous utilisez les flux RSS des commandes, n'oubliez pas de mettre à jour client/rss/cmd.php
+	Mise à jour de la boucle DECVAL, PANIER (ajout d'arguments)
+	Ajout des arguments deb et num à la boucle CARACDISP
+	Sauvegarde de la langue utilisée lors de la commande dans la table commande
+
+	Cette mise à jour contient une modification de la base de donnée. Après remplacement des fichiers, connectez-vous à
+	http://www.votrethelia.com/install/
+
+	Pensez à mettre client/pdf/modeles/facture.php et client/pdf/modeles/livraison.php à jour
+	Si vous mettez à jour une 1.3.7-pre1, editez l'enregistrement version de la table variable et donnez lui la valeur 136
+
+1.3.6
+	Ajout de la gestion du statut en plugin pour l'annulation d'une commande
+	Ajout de #PROMO dans la boucle PRODUIT
+	Ajout des sorties #PRODID #PRODREF dans la boucle accessoire
+	Simplification du template de base (filtres)
+	Ajout de l'argument declinaison à la boucle DECVAL
+	Nouvel argument pour la boucle PAGE type_page (0 pour produit, 1 pour contenu, produit par défaut)
+	Ajout de l'argument forcepage à la boucle PRODUIT
+	Modification des caracdisp possible directement depuis le BO
+	Modification des declidisp possible directement depuis le BO
+	Correction de la boucle PANIER (tva pour les clients de type 1)
+	Idem pour les substitutions PANIER
+	Date de livraison modifiée lors du passage à l'état envoyé
+	Ajout de quelques plugins d'administration + filtres. Il suffit de les activer au besoin
+	Ajout d'un système de mise à jour de la base de données de THELIA (lors des changement de version)
+	Ajout d'un système de réincrémentation de stock lors d'une annulation de commande. (Si vous utilisez le plugin histostock, pensez à le désactiver sinon double réincrémentation)
+	Correction de client/pdf/modele/livraison.php (pensez à mettre à jour)
+
+	Cette mise à jour contient une modification de la base de donnée. Après remplacement des fichiers, connectez-vous à
+	http://www.votrethelia.com/install/
+
+1.3.5
+	Possibilité d'ajouter via un plugin du code au niveau de admin/produit_modifier.php
+	Les plugins peuvent inclure du code avant l'ouverture de session (stockage d'objet en session par ex)
+	Restructuration des classes plugins (aucun incident sur les plugins existants)
+	Annulation de stockmini si declistockmini est renseigné dans la boucle PRODUIT
+	Amélioration de la boucle DECLIDISP
+	Ajout des substitutions #RUBRIQUE_RACINE, #RUBRIQUE_LIEN
+	Correction de la boucle PRODUIT si motcle (les autres arguments n'étaient pas pris en compte)
+	Ajout de la sortie #EXTENSION à la boucle DOCUMENT
+	Correction du chemin dans la page produit_modifier.php (admin)
+	Les commandes envoyées sont cachées dans la liste des commandes. Un lien permet de les consulter
+	ajout de la méthode apres dans les plugins qui s'execute apres l'affichage du template
+	Maj de sécurité
+	Suppression du système de cache actuel, inutile
+
+1.3.4
+	vérification mail lors de la modification de compte
+	correction Declidisp.class.php (ligne doublée)
+	ajout de #TRANSPORT dans la boucle COMMANDE
+	ajout du paramètre id à la boucle TRANSPORT
+	Si on entre un n° de colis --> plus de passage automatique au statut envoyé qui ne convient pas à tout le monde
+	Si suppression de la commande via client_visualiser.php --> statut annulé
+	Ajout de #NOMCACHE dans la boucle image afin de sortir de le nom de l'image en cache et affichage de l'image en cache directement
+	si elle existe
+	Correction pages suivantes, précédentes dans commande.php si statut annulé dans l'admin
+	Ajout de 2 méthodes pour les plugins apresclient() qui s'execute après la création d'un client. aprescommande() qui s'execute
+	juste avant le paiement
+	Possibilité d'ajouter via un plugin du code au niveau de admin/commande_details.php et admin/client_visualiser.php
+	Correction de substitmessage.php
+	Maj Bluepaid
+	Correction boucleCommande
+	Mail de confirmation personnalisable (voir wiki)
+	Maj du plugin Colissimo --> envoi de mail auto, si vous utilisez le plugin Colissimo désactivez-le puis réactivez-le
+	ajout des modes de paiement ogone, wexpay, payline
+
+1.3.3
+	correction arbreBoucle, arbreBoucle_dos
+	correction de #URLCOURANTEPARAM
+	correction de courante au niveau des declidisp
+	classement sur boucle ACCESSOIRE
+	ajout de la confirmation sur paiement chèque, virement
+	ajout des substitutions #PRODUIT_PROMO et #PRODUIT_NOUVEAUTE permettant de récupérer les paramètres promo et nouveaute passées
+	dans l'url
+	modification de la boucle QUANTITE
+	correction du formulaire de modification de compte dans le template de base
+	remplacement de tinymce par tinymcpuk (gestionnaire de fichiers en plus pour les images). Pensez à lire le fichier maj.txt
+	corrections du template de base
+	Suppression de la partie sajax, choix d'utiliser des librairies adaptées à la place. Plus simple pour le débogage
+	Correction des méthodes getTitre, getChapo, getDescription (classe Plugin)
+	Ajout des attributs exclusion, nom sur la boucle PAIEMENT
+	La langue est parametrable dans le fichier php ($lang=2 par ex)
+	ajout de la méthode "demarrage" sur les plugins. Elle est appelée avant les actions
+	maj du module paybox
+	Correction de client/rss/cmd.php
+	Correction de filtrefonction.php
+	Modification du moteur de recherche dans l'interface d'admin
+	correction de la traduction des declidispdesc
+	correction boucle commande (datelivraison)
+	maj de la boucle COMMANDE
+	possibilité de déplacer les rubriques
+	affectation automatique des caractéristiques et des déclinaisons aux rubriques à la création
+	Modification template de base
+	Gestion des titres/chapos/descriptions dans les documents
+	Modification du modèle de facture
+	Ajout d'un point d'entré statut() confirmation() modprod() au niveau des plugins
+	Correction document_dossier.php, document_contenu.php dans l'admin
+	Plus de suppression de commande --> passage en annulation afin d'éviter de supprimer par erreur.
+	Si on entre un n° de colis --> statut envoyé
+	Mise à jour de sécurité
+
+1.3.2
+	correction problème code promo (date expiration)
+	correction substitution dossier
+	ajout de #PANIER_POIDS pour avoir le poids total du panier
+	amélioration de l'affichage des déclinaisons dans le détail commande
+	modification légère du template de base
+	ajout du plugin Paypal dans l'archive
+	ajout de l'argument passage dans la boucle produit pour forcer l'arrêt de la boucle
+	réorganisation du répertoire fonctions
+	ajout d'un système de filtre et possibilité d'en ajouter via des plugins (méthode post())
+	filtre vide, min, maj, sanstags
+	possibilité de gérer via des plugins des actions à exécuter avant le moteur (méthode pre())
+	correction de redimlive (gif,png)
+	correction du format d'affichage des prix (transport,conversion)
+	ajout de l'argument stockmini à la boucle PRODUIT
+	unification de l'interface de gestion des plugins
+	correction des exports shopbot
+	correction du passage de la lang en GET
+	dans redimlive utilisation de eregi au lieu de ereg (évite les soucis de casse)
+	correction de la boucle CHEMIN
+	correction boucle DOCUMENT
+	correction de la gestion des promos (si pas d'expiration)
+	maj du template de base (pour empêcher le bypass de la page transport)
+	correction de la boucle CARACTERISTIQUE (argument affiche)
+	correction passage de la langue en paramètre
+	possibilité de n'afficher que les caracdisp (valeur des caractéristiques) qui possèdent un produit relié
+	ajout de courante sur les boucles CARACTERISTIQUE CARACDISP DECLINAISON DECLIDISP
+	ajout de la méthode inclusion() aux plugins. Cette méthode est appelée juste avant les inclusions
+	correction d'un bug de classement lors du déplacement d'un produit de rubrique.
+	correction d'un bug lors de la modification des infos du déclinaison (perte des valeurs associées)
+	correction de getDescription() dans les plugins qui retournait le chapo
+	simplification du template de base
+	surplus de prix possible au niveau des declidisp
+
+1.3.1
+	amélioration de la fonction recherche par prixmin/prixmax
+	ajout infos déclinaison dans l'admin
+	correction boucleDecval (declinaison dupliquée)
+	correction bouclePanier (declinaison dupliquée)
+	possibilité de forcer un nouvel article dans le panier même si déjà existant, quantité au choix
+	correction des caractéristiques, déclinaisons au niveau des traductions dans l'interface d'admin
+	modification de la gestion du cache après différents tests.
+	mise à jour de sécurité
+	gestion différente du cache, ajouter cache=1 pour mettre en cache une boucle
+	(http://blog.thelia.fr/index.php?2007/07/18/112-thelia-et-le-cache)
+	correction de la détection des plugins pour php4. En effet les fonctions get_class* retournent le nom de la classe
+	en minuscule ... alors qu'avec les versions récentes de PHP, son véritable nom est retourné.
+
+1.3.0
+	ajout d'un systeme de plugins
+	ajout d'un systeme de cache au niveau des boucles
+	Date de validité sur code promo + minimum de commande
+	attribut nocache="1" sur toutes les boucles si on ne souhaite pas mettre en cache
+	Correction boucle VENTEPROD
+	modification du fichier sql contenant les tables Thelia (compatibilité de versions MySQL)
+	Suppression des fonctperso (plugins maintenant)
+	Nouveau template de base
+	Corrections graphiques de l'interface d'administration
+	Suppression de la documentation en PDF en faveur de http://wiki.thelia.fr (bien plus pratique)
+	#GRANDE et #PETITE n'existe plus au niveau de la boucle IMAGE. #IMAGE remplace les 2.
+
+1.2.2
+	ajout support n° de colis
+	changement de la gestion des pages (possibilité de masquer précédente et suivante si on en a pas besoin)
+	deb et num utilisable dans les boucles RUBRIQUE et DOSSIER
+	Possibilité d'inclure du code PHP dans les squelettes (pas de short tag donc <?php). Ajoutez simplement $parsephp=1; dans les
+	squelettes contenant du php.
+	Vous devez exécutez les requêtes suivantes sur votre serveur MySQL :
+			ALTER TABLE  `pays` ADD  `tva` SMALLINT NOT NULL AFTER  `default` ;
+			UPDATE pays set tva="0";
+			UPDATE pays set tva="1" where id in(5,6,13,20,40,51,58,63,64,69,78,83,86,103,110,137,140,141,147,167);
+			ALTER TABLE  `modules` ADD  `classement` INT NOT NULL ;
+			ALTER TABLE  `commande` CHANGE  `envoi`  `colis` TEXT NOT NULL;
+
+
+1.2.1
+	Maj du plugin pour Dreamweaver
+	Corrections diverses
+	Amélioration de la gestion du parrainage
+	Correction d'un soucis de langue sur certaines boucles
+	Modification des boucles conditionnelles
+	Correction de l'installation (base comportant déjà des tables)
+	Gestion des déclinaisons lors d'un ajout Ajax
+
+1.2.0
+	Optimisation du parseur
+	Correction #PLUSURL #MOINSURL (panier)
+	Correction du soucis de devise dans l'import SQL
+	Correction de divers bugs
+	Ajout d'une gestion de la configuration dans l'interface d'administration
+	Génération automatique du token RSS lors de l'installation
+	Mise en place des modes de paiement et des modes de transport sous forme de plugins (modules)
+	Mise en place d'un nouveau template de base
+
+1.1.9
+	classement inverse pour la boucle contenu
+	ajout du plugin pour Macromédia Dreamweaver
+	modification de l'installation --> compatibilité
+	ajout d'un transport par défaut à l'installation
+	modification de la gestion des décimales
+	changement des inclusions au niveau des classes
+	correction admin/accessoire.php
+	recherche sur les déclinaisons en stock (boucle produit)
+	correction fonctions/substitproduits.php
+	ajout de fonctions/subtideclinaison.php
+	maj de la doc
+	modifications de l'administration (corrections diverses)
+	optimisation du code
+	ajout titre, chapo, desccription sur les images
+	update boucle image
+
+1.1.8
+	mise en place des blocs pour la boucle Contenu
+	correction des limites infinies
+	diverses corrections
+	maj de classes
+	maj et correction de l'installation
+
+1.1.7
+	correction de la documentation
+	update de admin/commande_détails.php
+	diverses corrections de bugs
+	correction de substitcommande.php
+	ajout des substitutions #PRODUIT_PRIXMIN, #PRODUIT_PRIXMAX
+	correction importante de toutes les substitutions
+	réorganisation des répertoires
+	modification de l'installation
+
+1.1.6
+	modification de la boucle accessoire
+	ajout de système d'exclusion
+	modification de l'install pour mysql_list_dbs désactivée
+
+1.1.5
+	Divers bugs mineurs
+	Modification panier
+	Modification boucle panier
+	Modification boucle page
+	Correction rubcaracteristique.php
+	Correction rubdeclinaison.php
+	Correction retour rubrique_modifier.php
+	Mise à jour des Examples
+	Mise à jour des substitutions
+	Modification des header(Location)
+
+1.1.4
+	Correction admin/zone.php
+	Correction admin/transport.php
+	Modification des pages devises dans l'admin
+	Correction du programme d'installation
+
+1.1.3
+	interface d'installation renomme client.orig
+
+1.1.2
+	modification de l'initialisation de tinymce ( pour le flash )
+	diverses corrections de boucles
+	utilisation de mysql_connect au lieu de mysql_pconnect bien pratique
+	mais posant problème sur les serveurs mutualisés (max_user_connections)
+	modification de zone.php dans admin/ posant problème sur certains serveurs
+	modification des déconnexions à MySQL
+	modification du squelette panier.html #PRODUIT != #ARTICLE
+	modification de la boucle Quantite
+	modification de action.php
+	modification de moteur.php
+	maj de la doc
+	Interface WEB d'installation
+
+1.1.1
+	correction de la gestion des stocks
+	diverses modifications graphiques dans l'interface d'administration
+	modification rewriting et soucis d'accents
+	ajout classement inverse dans la boucle produit
+	ajout d'attributs à la boucle Panier
+	classement possible dans la boucle Caracdisp
+	modification boucle Panier #PRODUIT
+	utilisation de mail au lieu de la classe Smtp par défaut
+
+1.1
+	ajout de la gestion de l'argument produit dans la boucle caractéristique
+	modification des stocks à la commande
+	quelques notices cachées par l'Ajax
+	Gestion des stocks activée au niveau du paiement
+
+1.0.9
+	correction de quelques notices qui subsistaient
+	ajout de l'attribut transaction dans la classe commande
+	correction boucle caractéristique
+	suppression de quelques notices
+	ajout du param deb pour la boucle RSS
+	changement du nom de la page index.html dans les exemples pour éviter
+	le .html par défaut sur certaines configs de serveur.
+	ajout dans la table variable du flux RSS affichée à l'entrée de l'interdace d'admin
+	pour l'ajouter manuellement :
+	INSERT INTO `variable` VALUES ('', 'rssadmin', 'http://www.octolys.fr/rss.php');
+
+1.0.8
+	Diverses modifications dans l'interface d'administration
+	Ajout de #COMPT dans la boucle Image
+	Correction du soucis de $_SESSION["bout"] lorsque l'on passe par le moteur de recherche (admin)
+	Correction de Cnx.class.php.orig ( tag long )
+
+1.0.7
+	Ajout d'un squelette d'exemple ajax dans le répertoire Example
+	Remplacement de spaw par tinymce. Seuls les styles et les tableaux sont activés afin de ne pas dénaturer la nature d'une page
+	Veuillez simplement executer cette requete : INSERT INTO `variable` VALUES ('', 'style_chem', '/styles_spaw.css');
+	en remplaçant le chemin par celui menant à votre feuille de style.
+	ajout de la substitution #CLIENT_IDPAYS
+	correction de la gestion des stocks
+
+1.0.6
+	Définition des variables non définies pour éviter les notices dans le cas où le php.ini les affiche.
+	Remplacement de mb_strtoupper par strtoupper
+	Diverses corrections dans l'interface d'administration
+	Correction du soucis de référence sous IE 6
+	Ajout support PNG
+
+1.0.5
+	Modification du code afin de faire fonctionner Thelia avec un short tag à Off.
+	Si vous avez des squelettes déjà réalisés, n'oubliez pas de modifier vos fichiers php en remplaçant <? par <?php
+
+1.0.4
+	Modification du code afin de faire fonctionner Thelia avec un register global à Off.
+	Modification du fichier sql pour la compatibilité entre les versions de MySQL.
+	Désactivation de l'éditeur spaw par défaut
+
+1.0.3
+	Ajout du répertoire modules dans les exemples omis dans la version précédente.
+
+1.0.2
+	ajout du paramètre courant à la boucle CONTENU
+	changement modèles pdf ( facture, bl ) pour permettre la sauvegarde avec un nom de fichier "logique"
+	ajout de l'attribut aléatoire pour les boucles RUBRIQUE, DOSSIER, IMAGE
+	upload multiple de photos
+	correction du bug des chemins pour la création des factures et des bons de livraison
+	ajout d'un répertoire exemple avec des exemples de squelettes.
+
+1.0.1
+	ajout du paramètre courant à la boucle DOSSIER
+	correction de #URL dans la boucle CONTENU
+	correction de la configuration de l'éditeur HTML dans l'admin ( gestion des images )
+	modification de la table variable ( pour les images dans l'éditeur )
+	ajout du mode miroir pour la boucle IMAGE
+	ajout de l'attribut panier au chargement du squelette permettant d'interdir l'accés à une page si le panier est vide
+	le changement de l'ordre des caractéristiques et des déclinaisons est maintenant possible
+	correction des chemins dans l'interface d'administration concernant les caractéristiques et les déclinaisons
+
+
+1.0
+	1ère version GPL de THELIA

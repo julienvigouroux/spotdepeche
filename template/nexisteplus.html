@@ -1,0 +1,16 @@
+<REM>
+Cette page est invoquée lorsqu'une de vos URL ré-ecrites n'est plus valable.
+
+Par défaut, elle redirige vos visiteurs sur la page d'accueil de votre site.
+
+Vous pouvez cependant la modifier selon vos besoins, en sachant que vous disposez
+dans les paramètres de la requête du nom de l'ancien fond (par exemple "produit",
+"contenu", etc. à récupérer avec #ENV{ancienfond}). L'ancien fond vous permet de
+savoir quels sont les substitutions que vous pouvez utiliser.
+
+Par exemple, si #ENV{ancienfond} vaut "produit", vous aurez dans l'URL
+id_rubrique, et la substitutions #RUBRIQUE_ID sera disponible. Voir dans le wiki
+Thelia les autres substitutions possibles.
+</REM>
+#PARAM_FOND_nopageret=1
+#HEADER{Location: #URLSOMMAIRE}

@@ -1,0 +1,214 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+#INCLURE "template/meta_produit.html"
+#INCLURE "template/tag_stats.html"
+</head>
+<body>
+<div id="principale">
+	<div id="interface">
+#INCLURE "template/entete.html"
+#INCLURE "template/menu.html"
+		<div id="chemin" class="grid_12">
+			<a href="#URLSOMMAIRE">::accueil::</a> /
+			<THELIA_chemrub type="CHEMIN" rubrique="#RUBRIQUE_ID">
+			<THELIA_rubdetchem type="RUBRIQUE" id="#ID">
+			<a href="#URL">#TITRE</a> /
+			</THELIA_rubdetchem>
+			</THELIA_chemrub>
+			<THELIA_rubcour type="RUBRIQUE" id="#RUBRIQUE_ID">
+			<a href="#URL">#TITRE</a> /
+			</THELIA_rubcour>
+			#PRODUIT_NOM
+		</div>
+		<div id="contenu" class="grid_12">
+				<THELIA_PROD type="PRODUIT" id="#PRODUIT_ID">
+				<h2>#TITRE</h2>
+                <div class="grid_4">
+                	<div class="grid_12 calign" id="produitImages">
+                		<T_img>
+		                    <THELIA_img type="IMAGE" num="1" produit="#ID" largeur="342">
+			                    <THELIA_ZOOM type="IMAGE"  num="1" id="#ID" largeur="500">
+			                    	#SET{zoom, #IMAGE}
+			                    </THELIA_ZOOM>
+                                <a href="#GET{zoom}" class="grandeImage">
+		                    <img src="#IMAGE" alt="#PRODTITRE" title="#PRODTITRE"/>
+                                </a>
+		                    </THELIA_img>
+	                    </T_img>
+								<img src="./template/_gfx/no-image.png" alt="Pas d'image disponible"/>
+						<//T_img>
+						<T_vignette>
+							<div class="push"></div>
+	                    	<THELIA_vignette type="IMAGE" produit="#ID" debut="2" hauteur="81">
+	                    		<div class="grid_4 vignette">
+								<THELIA_ZOOM_VIGNETTE type="IMAGE"  num="1" id="#ID" largeur="500">
+                                                                    #SET{zoom, #IMAGE}
+								</THELIA_ZOOM_VIGNETTE>
+                                <a href="#GET{zoom}">
+	                            <img src="#IMAGE" alt="#PRODTITRE" class="miniature" title="#PRODTITRE"/>
+                                </a>
+								</div>
+	                    	</THELIA_vignette>
+						</T_vignette>
+						<//T_vignette>
+					</div>
+                </div>
+
+
+                <div class="grid_8">
+
+                	<div class="grid_12 introProduit">
+
+                	<h3>::description::</h3>
+
+                	<div class="quote">#CHAPO</div>
+                	<div class="description">#DESCRIPTION</div>
+
+                	<div class="push"></div>
+
+            		<h3>::caracteristiques::</h3>
+
+            		<ul>
+                	<THELIA_carac type="caracteristique" produit="#PRODUIT_ID">
+
+						<li>
+
+						<b>#TITRE : </b>
+
+				        <THELIA_caracval type="CARACVAL" caracteristique="#ID" produit="#PRODUIT">
+
+					        #VALEUR
+
+				        </THELIA_caracval>
+
+						</li>
+
+                        </THELIA_carac>
+            		</ul>
+                        <div class="quote">#POSTSCRIPTUM</div>
+                            <form action="#AJOUTER_PARAMETRE(#URLCOURANTE,panier=1)" method="post">
+
+                               <input type="hidden" name="action" value="ajouter" />
+                               <input type="hidden" name="ref" value="#REF" />
+                               <input type="hidden" name="quantite" value="1" />
+
+                               #NOUVEAU[<div class="grid_12 nouveau-wrap"><span class="nouveau">::nouveau::</span></div>][]
+                               <div class="grid_4 prix-wrap">
+                                      #PROMO[<span class="prixProduit">#PRIX2&nbsp;€</span>&nbsp;&nbsp;&nbsp;<del>#PRIX&nbsp;€</del>][<span class="prixProduit">#PRIX&nbsp;€</span>]
+<!--#FILTRE_supegal(#STOCK||1||<a class="acheter" href="#PANIER"><span><span>::ajouterpanier::</span></span></a>||Produit indisponible)-->
+                               </div>
+
+                               <div class="grid_4">
+                                  <T_DECLI>
+                                  <ul class="declinaisons">
+                                  <THELIA_decli type="DECLINAISON" rubrique="#RUBRIQUE" produit="#ID" stockmini="1">
+                                          <li>
+                                          <label for="declinaison#ID">#TITRE:</label>
+                                          <select name="declinaison#ID" id="declinaison#ID">
+                                        <THELIA_declidisp type="DECLIDISP" declinaison="#ID" produit="#PRODUIT" stockmini="1">
+                                           <option value="#ID">#TITRE</option>
+                                        </THELIA_declidisp>
+                                     </select>
+                                          </li>
+                                  </THELIA_decli>
+                                  </ul>
+                                  </T_DECLI>
+                                  <//T_DECLI>
+                               </div>
+
+                               <div class="grid_4 ralign ajoutPanierWrap">
+                                       #FILTRE_different(#STOCK||0||<button type="submit">::ajouterpanier::<span class="hidden"> #STRIPTITRE</span></button>)
+                                       #FILTRE_egalite(#STOCK||0||::rupturestock::)
+                               </div>
+                            </form>
+
+                	</div>
+
+				</div>
+
+				<T_DOCUMENT>
+				<div class="telechargements">
+					<h3>::telechargement::</h3>
+					<ul>
+                		<THELIA_DOCUMENT type="DOCUMENT" produit="#PRODUIT_ID">
+                		<li><a href="#FICHIER">#TITRE</a></li>
+						</THELIA_DOCUMENT>
+					</ul>
+				</div>
+				</T_DOCUMENT>
+				<//T_DOCUMENT>
+				<div class="grid_12"></div>
+            	<T_CONTENU>
+				<div class="contenusAssocies grid_6">
+        			<THELIA_PRODUITSACC type="CONTENUASSOC" objet="#PRODUIT_ID" num="1">
+        				<THELIA_CONTENU type="CONTENU" id="#CONTENU">
+            				<div class="article grid_12">
+								<div class="article-contenu">
+									#SET{urlContenu, #URL}
+									<T_IMAGE>
+										<THELIA_IMAGE type="IMAGE" contenu="#ID" num="1">
+											<div class="grid_3"><a href="#GET{urlContenu}"><img class="miniature" src="#IMAGE" alt="#CONTTITRE" title="#CONTTITRE" /></a></div>
+										</THELIA_IMAGE>
+									</T_IMAGE>
+											<img src="./template/_gfx/no-image.png" alt="Pas d'image disponible" />
+									<//T_IMAGE>
+									<div class="grid_9">
+										<h3><a href="#URL">#TITRE</a><span class="spanDate rfloat">#DATE</span></h3>
+										#CHAPO
+									</div>
+									<div class="push"></div>
+									<a href="#URL" class="lire-la-suite"><b>::liresuite::</b> #TITRE</a>
+								</div>
+							</div>
+            			</THELIA_CONTENU>
+            		</THELIA_PRODUITSACC>
+				</div>
+				</T_CONTENU>
+            	<//T_CONTENU>
+   				<T_ACC>
+		            <div class="blocMozaique grid_6">
+		            	<div class="contenusAssocies-wrap">
+		                <h3>::autreproposition::</h3>
+                		<THELIA_ACC type="ACCESSOIRE" aleatoire="1" produit="#PRODUIT_ID" num="8">
+                			<div class="grid_3 calign">
+                            <THELIA_LIEN_PROD type="PRODUIT" id="#ACCESSOIRE">
+                            	<h4><a href="#URL">#TITRE</a></h4>
+                            	#SET{urlProduit, #URL}
+                            </THELIA_LIEN_PROD>
+                            <T_IMAGE>
+	                            <THELIA_IMAGE type="IMAGE" num="1" produit="#ACCESSOIRE" hauteur="81">
+		                            <a href="#GET{urlProduit}"><img src="#IMAGE" alt="#TITRE" title="#TITRE"/></a>
+	                            </THELIA_IMAGE>
+                            </T_IMAGE>
+									<a href="#GET{urlProduit}"><img src="./template/_gfx/no-image.png" alt="Pas d'image disponible" /></a>
+							<//T_IMAGE>
+                			</div>
+              			</THELIA_ACC>
+		            </div>
+					</T_ACC>
+					<//T_ACC>
+				</THELIA_PROD>
+				</div>
+			</div>
+	</div>
+</div>
+#FILTRE_different(#ENV{panier, 0}||0||
+<div id="thickbox-panier">
+	<div id="informations-thickbox">
+		<div class="grid_12">
+			<h2>::produitajoutepanier::</h2>
+			<h4>::quefaire::</h4>
+			<div class="grid_6"><a href="#URLFOND(produit,id_produit=#ENV{id_produit}&id_rubrique=#ENV{id_rubrique})">::poursuivreachats::</a></div>
+			<div class="grid_6"><a href="#URLFOND(panier)">::validerpanier::</a></div>
+		</div>
+	</div>
+</div>)
+#INCLURE "template/pied.html"
+#INCLURE "template/signature.html"
+</body>
+</html>

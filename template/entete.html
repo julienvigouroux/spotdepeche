@@ -1,0 +1,42 @@
+		<div id="header" class="grid_12">
+			<div id="logo" class="grid_6"><h1><a href="#URLSOMMAIRE">#VARIABLE(nomsite)</a></h1></div>
+			
+			<div class="grid_6" id="wrap-panierEtCompte">
+				<div id="panierEtCompte">
+					<div id="monPanier">
+                                                <ul id="headerPanier">
+                                                        <li>
+                                                                <a href="#URLPANIER" class="panier"><img src="./template/_gfx/cadis.png" alt="Panier" />&nbsp;::panier:: [ #PANIER_NBART ::article:: ]</a>
+                                                                <ul id="contenuPanier">
+<T_panier>
+        <THELIA_panier type="PANIER">
+                                                                        <li><a href="#URLPANIER"><span class="emp">x#QUANTITE</span> <b>#TITRE</b> &nbsp; #TOTAL €</a></li>
+        </THELIA_panier>
+                                                                        <li><a href="#URLPANIER" class="totalCommande">::total:: : #PANIER_TOTAL €</a></li>			
+</T_panier>
+                                                                        <li><a href="#URLPANIER">::paniervide::</a></li>
+<//T_panier>
+                                                                </ul>
+                                                        </li>
+                                                </ul>
+			        </div>
+			
+					<div id="monCompte">
+		    			<a href="#URLFOND(moncompte)" class="compte">::compte::</a>
+		    			<THELIA SI CONNECTE>
+				    		(<a href="#URLDECONNEXION"><small>::deconnect::</small></a>)
+                                        </THELIA SI CONNECTE>
+		    		</div>
+		    	</div>
+		    </div>
+
+
+    	<div id="moteurDeRecherche" class="grid_5">
+	        <form action="#URLRECHERCHE" method="post" name="recherche" id="recherche">
+	            <label for="motcle">::recherche::</label>
+	            <input name="motcle" id="motcle" type="text" />
+	            <input type="submit" class="bouton" value="OK" />
+	        </form>
+	        <div id="rechercheAvancee"><a href="#URLFOND(recherche_avancee)">::rechercheavancee::</a></div>
+	    </div> 
+	</div>

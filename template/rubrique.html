@@ -1,0 +1,123 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+#INCLURE "template/meta_rubrique.html"
+#INCLURE "template/tag_stats.html"
+</head>
+<body>
+<div id="principale">
+	<div id="interface">
+#INCLURE "template/entete.html"
+		
+#INCLURE "template/menu.html"
+		<div id="chemin" class="grid_12">
+			<a href="#URLSOMMAIRE">::accueil::</a> / <THELIA_chemrub type="CHEMIN" rubrique="#RUBRIQUE_ID"><THELIA_rubdetchem type="RUBRIQUE" id="#ID"><a href="#URL">#TITRE</a> / </THELIA_rubdetchem></THELIA_chemrub>#RUBRIQUE_NOM
+        </div>
+        <div id="contenu" class="grid_12">
+	        <h2>#RUBRIQUE_NOM</h2>
+	        <div id="rubrique-wrap" class="grid_12">
+		        <T_imgrub>
+		        	<div class="grid_3 nomarginvertical">
+		        	<THELIA_imgrub type="IMAGE" rubrique="#RUBRIQUE_ID" num="1">
+		        		<img class="miniature" src="#IMAGE" alt="RUBRIQUE_NOM" />
+		        	</THELIA_imgrub>
+		        	</div>
+		        	<div class="grid_9 nomarginvertical">
+		        </T_imgrub>
+		        	<div>
+		        <//T_imgrub>
+		        #FILTRE_different(#RUBRIQUE_CHAPO||||<div class="grid_12"><div class="quote">#RUBRIQUE_CHAPO</div></div>)
+		    	#FILTRE_different(#RUBRIQUE_DESCRIPTION||||<div class="grid_12">#RUBRIQUE_DESCRIPTION</div>)
+	    	</div>
+    	</div>
+    	<div id="rubrique-sep"></div>
+    	<T_SSRUBRIQUE>
+        	<THELIA_SSRUBRIQUE type="RUBRIQUE" parent="#RUBRIQUE_ID" classement="manuel">
+        	<div class="rubrique">
+        		<div class="grid_2">
+        			<a href="#URL" class="image">
+        				<T_IMAGE>
+	                    	<THELIA_IMAGE type="IMAGE" num="1" rubrique="#ID" largeur="140">
+	                        	<img src="#IMAGE" alt="#RUBTITRE" title="#RUBTITRE" />
+	                        </THELIA_IMAGE>
+                    	</T_IMAGE>
+								<img src="./template/_gfx/no-image.png" alt="Pas d'image disponible" />
+						<//T_IMAGE>
+                    </a>
+        		</div>
+        		<div class="grid_2">
+                    <h3><a href="#URL">#TITRE</a></h3>
+					<div class="description">
+						#FILTRE_different(#CHAPO||||<div class="quote">#CHAPO</div>)
+                  		<p><a class="acheter" href="#URL">::decouvrir::<span class="hidden"> #STRIPTITRE</span></a></p>
+                    </div>
+        		</div>
+			</div>
+			<TEST_ex11 variable="#COMPT" test="modulo" valeur="3,0">
+				<div class="grid_12"></div>
+			</TEST_ex11>
+			
+			<//TEST_ex11>
+			</THELIA_SSRUBRIQUE>
+        </T_SSRUBRIQUE>
+        
+        	<div class="grid_12 nomarginvertical">
+				<THELIA_PROD type="PRODUIT" rubrique="#RUBRIQUE_ID" classement="manuel" num="12">
+				<div class="produit grid_2">
+					<div class="produit-wrap">
+						<a href="#URL" class="image">
+						<T_IMAGE>
+							<THELIA_IMAGE type="IMAGE" num="1" produit="#ID" hauteur="140">
+								<img src="#IMAGE" alt="#PRODTITRE" title="#PRODTITRE"/>
+							</THELIA_IMAGE>
+						</T_IMAGE>
+								<img src="./template/_gfx/no-image.png" alt="Pas d'image disponible" />
+						<//T_IMAGE>
+						</a>
+						<div class="description grid_12">
+							<h3><a href="#URL">#TITRE</a></h3>
+							<div class="chapo">#CHAPO</div>
+							#NOUVEAU[<span class="nouveau">::nouveau::</span>][]
+						</div>
+						<div class="prix grid_12">
+							<div class="grid_6 wrap-prix">#PROMO[<span class="prixProduit">#PRIX2€</span>][<span class="prixProduit">#PRIX€</span>]</div>
+							<div class="grid_6 wrap-prix-promo">#PROMO[<del>#PRIX€</del>][]</div>
+						</div>
+						<div class="infossup grid_12 ralign"><a class="acheter" href="#URL">::infosup:: <span class="hidden">sur #TITRE</span></a></div>
+					</div>
+				</div>
+				</THELIA_PROD>				
+			</div>
+			
+			<T_CPAGE>
+	            <div id="pages" class="grid_12">
+					<THELIA_PAGEPREC type="PAGE" rubrique="#RUBRIQUE_ID"  nouveaute="#PRODUIT_NOUVEAUTE" promo="#PRODUIT_PROMO" num="12" typeaff="0" avance="precedente">
+					<a href="#URLFOND(rubrique,id_rubrique=#RUBRIQUE_ID&nouveaute=#PRODUIT_NOUVEAUTE&promo=#PRODUIT_PROMO&page=#PAGE_PREC)">::pageprecedente::</a>
+					</THELIA_PAGEPREC>
+					<THELIA_CPAGE type="PAGE" rubrique="#RUBRIQUE_ID" nouveaute="#PRODUIT_NOUVEAUTE" promo="#PRODUIT_PROMO"  motcle="#PRODUIT_MOTCLE" num="12" max="10" typeaff="1">
+					|
+					<THELIA_PAGECONT_PASCOUR type="PAGE" rubrique="#RUBRIQUE_ID" nouveaute="#PRODUIT_NOUVEAUTE" promo="#PRODUIT_PROMO" num="12" courante="0" pagecourante="#PAGE_NUM" max="10" typeaff="1">
+					<a href="#URLFOND(rubrique,id_rubrique=#RUBRIQUE_ID&page=#PAGE_NUM&nouveaute=#PRODUIT_NOUVEAUTE&promo=#PRODUIT_PROMO)">#PAGE_NUM</a>
+					</THELIA_PAGECONT_PASCOUR>
+					<THELIA_PAGECONT_COUR type="PAGE" rubrique="#RUBRIQUE_ID" nouveaute="#PRODUIT_NOUVEAUTE" promo="#PRODUIT_PROMO" num="12" courante="1" pagecourante="#PAGE_NUM" max="10" typeaff="1">
+					#PAGE_NUM
+					</THELIA_PAGECONT_COUR>
+					</THELIA_CPAGE>
+					<THELIA_PAGE_SUIVANTE type="PAGE" rubrique="#RUBRIQUE_ID" nouveaute="#PRODUIT_NOUVEAUTE" promo="#PRODUIT_PROMO" num="12" max="10" typeaff="0" avance="suivante">
+					| <a href="#URLFOND(rubrique,id_rubrique=#RUBRIQUE_ID&page=#PAGE_SUIV&nouveaute=#PRODUIT_NOUVEAUTE&promo=#PRODUIT_PROMO)">::pagesuivante::</a>
+					</THELIA_PAGE_SUIVANTE>
+				</div>
+			</T_CPAGE>
+			<//T_CPAGE>
+		<//T_SSRUBRIQUE>		
+		</div>
+	</div>
+</div>
+#INCLURE "template/pied.html"
+#INCLURE "template/signature.html"
+</body>
+</html>

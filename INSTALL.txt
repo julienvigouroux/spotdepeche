@@ -1,0 +1,34 @@
+Installer Thelia
+----------------
+
+Cette documentation concerne une première installation de Thelia. Pour une
+mise à jour d'une version antérieure de Thelia, merci de lire le fichier MAJ.txt
+
+Thelia requiert un serveur web Apache 2, le langage PHP en version 5.3 minimum, et
+le système de base de données MySQL en version 5.
+
+Assurez vous que l'environnement sur lequel vous souhaitez installer Thelia possède
+ces caractéristiques de base. Assurez-vous aussi que vous disposez d'un accès à une
+base de données MySQL (nom d'utilisateur, mot de passe et nom de la base de données),
+ou à défaut d'un login ayant les privilèges de création de base de données.
+
+Copiez ensuite l'intégralité des fichiers de la distribution Thelia à la racine
+de votre serveur Web ou dans un sous-répertoire.
+
+Pour lancer l'installation, faites pointer votre navigateur vers le répertoire
+d'installation:
+
+   http://adresse_de_votre_serveur/install/
+
+Si vous avez installé Thelia  dans un sous-répertoire:
+
+   http://adresse_de_votre_serveur/nom_du_sous_repertoire/install/
+
+L'assistant d'installation est alors démarré, et vous guidera pas à pas.
+
+
+Après l'installation
+--------------------
+
+Pour des raisons de sécurité, il vous faut supprimer (ou renommer) le répertoire
+install une fois l'installation terminé.

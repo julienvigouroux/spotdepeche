@@ -1,0 +1,82 @@
+#PARAM_FOND_securise=1
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+#INCLURE "template/meta.html"
+#INCLURE "template/tag_stats.html"
+</head>
+<body>
+<div id="principale">
+	<div id="interface">
+#INCLURE "template/entete.html"
+#INCLURE"template/menu.html"
+		<div id="chemin" class="grid_12"><a href="#URLSOMMAIRE">::accueil::</a> /	::coordonnees::</div>
+        <div id="contenu" class="grid_12">
+            <div id="etapesDeCommande">
+                <ul>
+                    <li><span>1</span>::panier::</li>
+                    <li class="selection"><span class="chiffreSelection">2</span>::facturationlivraison::</li>
+                    <li><span>3</span>::verifcommande::</li>
+                    <li><span>4</span>::paiementsecurise::</li>
+                </ul>
+            </div>
+            <h2>::coordonnees::</h2>
+            <div class="adresseDeFacturation grid_6">
+                <h3>::adressefacturation::</h3>
+                <div class="contenu">
+                    #CLIENT_RAISON #CLIENT_PRENOM #CLIENT_NOM<br />
+                    #CLIENT_ADRESSE1 #CLIENT_ADRESSE2 #CLIENT_ADRESSE3<br />
+                    #CLIENT_CPOSTAL #CLIENT_VILLE<br />
+                    #CLIENT_PAYS
+                </div>
+                <a href="#URLCOMPTEMODIFIER" class="modifierOuAjouter bouton">::modifadresse::</a>
+            </div>
+            <div class="adresseDeLivraison grid_6">
+                <h3>::adresselivraison:: </h3>
+                <THELIA_adrcours type="ADRESSE" adresse="#ADRESSE_ACTIVE">
+                <div class="contenu">
+                    #RAISON #PRENOM #NOM<br />
+                    #ADRESSE1 #ADRESSE2 #ADRESSE3<br />
+                    #CPOSTAL #VILLE<br />
+                    <THELIA_pays type="PAYS" id="#PAYS">#TITRE</THELIA_pays>
+                </div>
+                    <T_adrmodcours>
+                        <THELIA_adrmodcours type="ADRESSE" adresse="#ADRESSE_ACTIVE" defaut="0">
+                <a href="#URLFOND(livraison_modifier,adresse=#ID)" class="modifierOuAjouter bouton">::modifadresse::</a>
+                        </THELIA_adrmodcours>
+                    </T_adrmodcours>
+                <a href="#URLCOMPTEMODIFIER" class="modifierOuAjouter bouton">::modifadresse::</a>
+                    <//T_adrmodcours>
+                </THELIA_adrcours>
+                <h4>::selectautreadresselivraison::</h4>
+                <ul>
+                <TEST_activefact variable="#ADRESSE_ACTIVE" test="different" valeur="0">
+                    <li><a href="#URLFOND(adresse,action=modadresse&amp;adresse=0)">::adressefacturationdefaut::</a></li>
+                </TEST_activefact>
+                <//TEST_activefact>
+                <THELIA_adr type="ADRESSE" client="#CLIENT_ID" exclusion="#ADRESSE_ACTIVE">
+                    <li><a href="#URLFOND(adresse,action=modadresse&amp;adresse=#ID)">#LIBELLE</a> </li>
+                </THELIA_adr>
+                </ul>
+                <a href="#URLFOND(livraison_adresse)" class="modifierOuAjouter bouton">::ajoutnouvelleadresse::</a>
+            </div>
+       
+            <h2>::choixmodelivraison:: </h2>
+            <div class="choixDeLaLivraison">
+            	<ul>
+                	<THELIA_transport type="TRANSPORT">
+                	<li><a href="#URLCMD"><span class="modeDeLivraison">#TITRE / #PORT €</span><span class="choisir"></span></a></li>
+                	</THELIA_transport>
+                </ul>
+            </div>
+        </div>
+	</div>
+</div>
+#INCLURE "template/pied.html"
+#INCLURE "template/signature.html"
+</body>
+</html>
