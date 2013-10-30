@@ -1,0 +1,127 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+#INCLURE "template/meta.html"
+#INCLURE "template/tag_stats.html"
+</head>
+<body>
+<div id="principale">
+	<div id="interface">
+#INCLURE "template/entete.html"
+#INCLURE "template/menu.html"
+		<div id="chemin" class="grid_12">
+			<a href="#URLSOMMAIRE">::accueil::</a>
+		</div>
+		<div id="contenu" class="grid_12">
+		<div id="nouveautes" class="grid_6">
+				<THELIA_PROD type="PRODUIT" num="4" aleatoire="1">
+				<div class="produit grid_6" >
+					<div class="produit-wrap">
+						<a href="#URL" class="image">
+						<T_IMAGE>
+							<THELIA_IMAGE type="IMAGE" num="1" produit="#ID" hauteur="140">
+								<img src="#IMAGE" alt="#PRODTITRE" title="#PRODTITRE"/>
+							</THELIA_IMAGE>
+						</T_IMAGE>
+								<img src="./template/_gfx/no-image.png" alt="Pas d'image disponible" />
+						<//T_IMAGE>
+						</a>
+						<div class="description grid_12">
+							<h3><a href="#URL">#TITRE</a></h3>
+							<div class="chapo">#CHAPO</div>
+							#NOUVEAU[<span class="nouveau">::nouveau::</span>][]
+						</div>
+						<div class="prix grid_12">
+							<div class="grid_6 wrap-prix">#PROMO[<span class="prixProduit">#PRIX2€</span>][<span class="prixProduit">#PRIX€</span>]</div>
+							<div class="grid_6 wrap-prix-promo">#PROMO[<del>#PRIX€</del>][]</div>
+						</div>
+						<div class="infossup grid_12 ralign"><a class="acheter" href="#URL">::infosup:: <span class="hidden">sur #TITRE</span></a></div>
+					</div>
+				</div>
+				</THELIA_PROD>
+			</div>
+			<div id="articlesRecents" class="grid_6">
+				<THELIA_articles type="CONTENU" classement="inverse" num="2">
+					<div class="article-a-la-une grid_12">
+						<div class="article-contenu">
+							#SET{urlContenu, #URL}
+							<T_IMAGE>
+								<THELIA_IMAGE type="IMAGE" contenu="#ID" num="1">
+									<div class="grid_3"><a href="#GET{urlContenu}"><img class="miniature" src="#IMAGE" alt="#CONTTITRE" title="#CONTTITRE" /></a></div>
+								</THELIA_IMAGE>
+							</T_IMAGE>
+								<div class="grid_3"><img src="./template/_gfx/no-image.png" class="miniature" alt="Pas d'image disponible" /></div>
+							<//T_IMAGE>
+							<h3><a href="#URL">#TITRE</a><span class="spanDate rfloat">#DATE</span></h3>
+							<div class="grid_9">#CHAPO</div>
+							<div class="push"></div>
+							<a href="#URL" class="lire-la-suite"><b>::liresuite::</b> #TITRE</a>
+						</div>
+						#FILTRE_egalite(#COMPT||1||<div class="article-sep"></div>)
+					</div>
+				</THELIA_articles>
+				<T_articles>
+					<div id="wrap-articles" class="grid_12">
+					<THELIA_articles type="CONTENU" classement="inverse" num="2" deb="2">
+						<div class="article grid_12">
+							<div class="article-contenu">
+								<h3><a href="#URL">#TITRE</a><span class="spanDate rfloat">#DATE</span></h3>
+								<div class="grid_12">#CHAPO</div>
+								<div class="push"></div>
+								<a href="#URL" class="lire-la-suite"><b>::liresuite::</b> #TITRE</a>
+							</div>
+						</div>
+						#FILTRE_egalite(#COMPT||1||<div class="article-sep"></div>)
+					</THELIA_articles>
+					</div>
+					<a href="#URLFOND(dossier)" class="rfloat">::voirtousarticles::</a>
+				</T_articles>
+				<//T_articles>
+			</div>
+			<!-- Si vous souhaitez ne pas afficher d'articles : 
+					- Supprimer le div "articlesRecents" ci-dessus
+					- Modifier la classe du div "nouveautes" en "grid_12"
+					- Modifier la classe du div "produit grid_6" en "produit grid_3" -->
+			<div id="promotions" class="grid_12">
+                            <T_promo>
+				<h2>::promotions::</h2>
+				<THELIA_PROMO type="PRODUIT" aleatoire="1" promo="1" num="6">
+				<div class="produit grid_2">
+					<div class="produit-wrap">
+						<a href="#URL" class="image">
+						<T_IMAGE>
+							<THELIA_IMAGE type="IMAGE" num="1" produit="#ID" hauteur="140">
+								<img src="#IMAGE" alt="#PRODTITRE" title="#PRODTITRE"/>
+							</THELIA_IMAGE>
+						</T_IMAGE>
+								<img src="./template/_gfx/no-image.png" alt="Pas d'image disponible" />
+						<//T_IMAGE>
+						</a>
+						<div class="description grid_12">
+							<h3><a href="#URL">#TITRE</a></h3>
+							<div class="chapo">#CHAPO</div>
+							#NOUVEAU[<span class="nouveau">::nouveau::</span>][]
+						</div>
+						<div class="prix grid_12">
+							<div class="grid_6 wrap-prix">#PROMO[<span class="prixProduit">#PRIX2€</span>][<span class="prixProduit">#PRIX€</span>]</div>
+							<div class="grid_6 wrap-prix-promo">#PROMO[<del>#PRIX€</del>][]</div>
+						</div>
+						<div class="infossup grid_12 ralign"><a class="acheter" href="#URL">::infosup:: <span class="hidden">sur #TITRE</span></a></div>
+					</div>
+				</div>
+				</THELIA_PROMO>
+                            </T_promo>
+                            <//T_promo>
+			</div>
+		</div>
+
+	</div>
+</div>
+#INCLURE "template/pied.html"
+#INCLURE "template/signature.html"
+</body>
+</html>
