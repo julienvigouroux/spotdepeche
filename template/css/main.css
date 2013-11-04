@@ -8,11 +8,16 @@
 	padding-top: 50px;
 	left: 0px;
 	background-color: rgba(255, 255, 255, 0.8);
+	cursor:pointer;
 }
 
 .option-panel{
 	display: block;
 	padding: 0px;
+	
+}
+#map-canvas{
+	cursor:pointer!important;
 }
 /* ==========================================================================
    Author's custom styles

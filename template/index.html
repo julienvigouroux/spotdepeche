@@ -49,7 +49,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link</a></li>
+                <li class="active"><a href="#" id="link">Link</a></li>
                 <li><a href="#">Link</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -219,6 +219,20 @@
                     <button type="button" class="btn btn-default">Valider</button>
                     </form>
                     
+                    <!-- AddThis Button BEGIN -->
+                    <div class="addthis_toolbox addthis_default_style ">
+                    <a class="addthis_button_preferred_1" addthis:url="http://example.com"
+                    addthis:title="An Example Title"
+                    addthis:description="An Example Description"></a>
+                    <a class="addthis_button_preferred_2"></a>
+                    <a class="addthis_button_preferred_3"></a>
+                    <a class="addthis_button_preferred_4"></a>
+                    <a class="addthis_button_compact"></a>
+                    <a class="addthis_counter addthis_bubble_style"></a>
+                    </div>
+                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515d80684b68def2"></script>
+                    <!-- AddThis Button END -->
+                    
                 </div>
             </div>
             
@@ -229,18 +243,91 @@
     
         <script src="template/js/main.js"></script>
         
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=drawing"></script>
         
         <script>
             var map;
         
             var mapOptions = {
-                zoom: 8,
+                zoom: 12,
                 center: new google.maps.LatLng(45.042768, 3.8829359999999724),
+                disableDefaultUI: true,
+                zoomControl: true,
+                zoomControlOptions: {
+                  style: google.maps.ZoomControlStyle.SMALL,
+                  position: google.maps.ControlPosition.BOTTOM_CENTER
+                },
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
             map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
-
+            
+            /* var ctaLayer = new google.maps.KmlLayer({
+                url: 'http://kml-samples.googlecode.com/svn/trunk/kml/Placemark/placemark.kml'
+            });
+            ctaLayer.setMap(map);
+            */
+            /*
+            var drawingManager = new google.maps.drawing.DrawingManager({
+                drawingMode: google.maps.drawing.OverlayType.MARKER,
+                drawingControl: true,
+                drawingControlOptions: {
+                  position: google.maps.ControlPosition.BOTTOM_CENTER,
+                  drawingModes: [
+                    google.maps.drawing.OverlayType.MARKER,
+                    google.maps.drawing.OverlayType.CIRCLE,
+                    google.maps.drawing.OverlayType.POLYGON,
+                    google.maps.drawing.OverlayType.POLYLINE,
+                    google.maps.drawing.OverlayType.RECTANGLE
+                  ]
+                },
+                markerOptions: {
+                },
+                circleOptions: {
+                  fillColor: '#ffff00',
+                  fillOpacity: 1,
+                  strokeWeight: 5,
+                  clickable: false,
+                  editable: true,
+                  zIndex: 1
+                }
+              });
+              drawingManager.setMap(map);
+              */
+            /*
+            console.log(map.getBounds());
+            
+            google.maps.event.addListener(map, 'click', function(e){
+                console.log(e.latLng);
+                 placeMarker(e.latLng, map);
+            });
+            
+            $("#link").click(function(){
+                newCenter = new google.maps.LatLng(50.042768, 4.8829359999999724);
+                map.panTo(newCenter);
+            });
+         
+            google.maps.event.addListener(map, 'dragend', function() {
+               console.log(map.getBounds());
+               
+            });
+            
+            function placeMarker(position, map) {
+                var marker = new google.maps.Marker({
+                position: position,
+                map: map,
+                draggable : true
+                });
+                map.panTo(position);
+                google.maps.event.clearListeners(map, 'click');
+                
+                google.maps.event.addListener(marker,'dragend', function(e){
+                    console.log(e.latLng);
+                });
+                
+                
+            }
+            */
+            //cursor : 'wait'
         </script>
         
         <script>

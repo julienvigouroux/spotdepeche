@@ -1,4 +1,4 @@
-O:14:"ContenuElement":3:{s:8:"elements";a:1:{i:0;O:8:"PexTexte":1:{s:5:"texte";s:12199:"<!DOCTYPE html>
+O:14:"ContenuElement":3:{s:8:"elements";a:1:{i:0;O:8:"PexTexte":1:{s:5:"texte";s:14981:"<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -34,7 +34,7 @@ O:14:"ContenuElement":3:{s:8:"elements";a:1:{i:0;O:8:"PexTexte":1:{s:5:"texte";s
         
         <div class="container">
             
-            <nav class="navbar navbar-default" role="navigation">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -49,7 +49,7 @@ O:14:"ContenuElement":3:{s:8:"elements";a:1:{i:0;O:8:"PexTexte":1:{s:5:"texte";s
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link</a></li>
+                <li class="active"><a href="#" id="link">Link</a></li>
                 <li><a href="#">Link</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -229,18 +229,91 @@ O:14:"ContenuElement":3:{s:8:"elements";a:1:{i:0;O:8:"PexTexte":1:{s:5:"texte";s
     
         <script src="template/js/main.js"></script>
         
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=drawing"></script>
         
         <script>
             var map;
         
             var mapOptions = {
-                zoom: 8,
+                zoom: 12,
                 center: new google.maps.LatLng(45.042768, 3.8829359999999724),
+                disableDefaultUI: true,
+                zoomControl: true,
+                zoomControlOptions: {
+                  style: google.maps.ZoomControlStyle.SMALL,
+                  position: google.maps.ControlPosition.BOTTOM_CENTER
+                },
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
             map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
-
+            
+            /* var ctaLayer = new google.maps.KmlLayer({
+                url: 'http://kml-samples.googlecode.com/svn/trunk/kml/Placemark/placemark.kml'
+            });
+            ctaLayer.setMap(map);
+            */
+            /*
+            var drawingManager = new google.maps.drawing.DrawingManager({
+                drawingMode: google.maps.drawing.OverlayType.MARKER,
+                drawingControl: true,
+                drawingControlOptions: {
+                  position: google.maps.ControlPosition.BOTTOM_CENTER,
+                  drawingModes: [
+                    google.maps.drawing.OverlayType.MARKER,
+                    google.maps.drawing.OverlayType.CIRCLE,
+                    google.maps.drawing.OverlayType.POLYGON,
+                    google.maps.drawing.OverlayType.POLYLINE,
+                    google.maps.drawing.OverlayType.RECTANGLE
+                  ]
+                },
+                markerOptions: {
+                },
+                circleOptions: {
+                  fillColor: '#ffff00',
+                  fillOpacity: 1,
+                  strokeWeight: 5,
+                  clickable: false,
+                  editable: true,
+                  zIndex: 1
+                }
+              });
+              drawingManager.setMap(map);
+              */
+            /*
+            console.log(map.getBounds());
+            
+            google.maps.event.addListener(map, 'click', function(e){
+                console.log(e.latLng);
+                 placeMarker(e.latLng, map);
+            });
+            
+            $("#link").click(function(){
+                newCenter = new google.maps.LatLng(50.042768, 4.8829359999999724);
+                map.panTo(newCenter);
+            });
+         
+            google.maps.event.addListener(map, 'dragend', function() {
+               console.log(map.getBounds());
+               
+            });
+            
+            function placeMarker(position, map) {
+                var marker = new google.maps.Marker({
+                position: position,
+                map: map,
+                draggable : true
+                });
+                map.panTo(position);
+                google.maps.event.clearListeners(map, 'click');
+                
+                google.maps.event.addListener(marker,'dragend', function(e){
+                    console.log(e.latLng);
+                });
+                
+                
+            }
+            */
+            //cursor : 'wait'
         </script>
         
         <script>

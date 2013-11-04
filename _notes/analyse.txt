@@ -1,0 +1,107 @@
+****************************************************
+table categoriecalque :
+La table categoriecalque regroupe les calques d'une méme catégorie
+
+categoriecalque (id, titre, description, classement)
+	
+	id : identifiant de la catégorie
+	titre : titre de la catégorie
+	description : description de la catégorie
+	classement : classement pour l'affichage de la catégorie
+
+
+****************************************************
+table calque :
+La table calque, regroupe les informations sur les données géolocalisé d'un méme théme.
+
+calque (id, titre, description, image, demarrage, sponsorisé, #categoriecalque, classement)
+
+	id : identifiant du calque
+	titre : titre du calque
+	description : description du calque
+	image : url vers l'image du calque
+	demarrage : 1 pour affiché au démarrage, 0 sinon
+	sponsorisé : 1 pour calque sponsorisé, 0 sinon
+	#categoriecalque : id de la catégorie du calque
+	classement : classement pour l'affichage du calque
+
+****************************************************
+table elmgeoloc :
+La table elmgeoloc regroupe les éléments géolocalisés (zone ou point).
+
+elmgeoloc (id, longitude, latitude, kml, #commune, #departement, titre, description, note, pointeur, #calque, #utilisateur, datecreation,
+		topographie, profondeur, obstacles, vegetation, fond, accessibilite, acces )
+
+	id : identifiant de l'élément
+	longitude : longitude de l'élément
+	latitude : latitude de l'élément
+	kml : lien vers le fichier kml
+	commune : id de la commune
+	departement : id du département
+	titre : titre du point
+	description : description du point
+	note : note du point (à calculer à chaque maj de la note)
+	pointeur : lien vers l'image du pointeur
+	calque : id du calque
+	utilisateur : id de l'utilisateur qui à posté le point
+	datecreation : date de création du point
+	
+	/* les données suivantes doivent etre géré a part, utiliser un systheme de caractérique */
+	
+	topographie : topographie du lieu
+	profondeur : profondeur moyenne
+	obstacles : présence d’obstacles
+	vegetation : présence de végétation 
+	fond : nature du fond 
+	accessibilite : information sur l'accessibilité du point
+	acces : accès au lieu
+	
+	
+********************************************************************************************************
+****************************************************
+GESTION DES CARACTERISTIQUE
+****************************************************
+
+****************************************************
+table elmcarac :
+La table elmcarac regroupe les caractéristiques disponiblent pour un élément. par exemple :
+topographie, profondeur ...
+
+elmcarac (id, titre, description, classement)
+
+****************************************************
+table elmcaracdisp :
+La table elmcaracdisp regroupe les valeurs disponibles pour une caractéristique.
+
+elmcaracdisp (id, valeur, #elmcarac, classement)
+
+		valeur : valeur de la caractéristique
+		elmcarac : id de la caractéristique
+
+****************************************************
+table elmcaracval :
+la table elmcaracval regroupe pour chaque element, la valeur de la caracteristique
+
+elmcaracval (id, #elmgeoloc, #elmcarac, #elmcaracdisp, valeur)
+
+		valeur : si aucune caracdisp n'est disponible, on inserera directement une valeur
+
+
+!!! regarder la possibilité de reprendre le systheme actuel !!!
+
+
+****************************************************
+table elmcommentaire :
+La table elmcommentaire regroupe les commentaires sur un point.
+
+elmcommentaire (id, titre, description, date, etat, #elmgeoloc)
+
+	id : identifiant de l'element
+	titre : titre du commentaire (possible que ce champ ne soit pas utilisé)
+	description : description du commentaire
+	date : date du commentaire
+	etat : 1 pour en ligne, 2 pour en attente de validation, 0 pour hors ligne
+	elmgeoloc : id de l'element geoloc (point ou zone)
+
+
+
